@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 41 - jQuery fundamentals</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+    <style>
+      .marked {
+        border: 2px solid red;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Find all button inputs and mark them using jQuery.</h2>
+    <form>
+      <fieldset>
+        <textarea rows="4" cols="50">
+      At w3resource.com you will learn how to make a website. We offer free tutorials in all web development technologies. 
+      </textarea
+        >
+        <input type="button" value="Input Button" />
+      </fieldset>
+    </form>
+    <p></p>
+    <button id="button1">Click to see the effect</button>
+
+    <script>
+      $("button").on("click", function () {
+        var countBtn = $(":button").addClass("marked").length
+        $("p").text(`No. of button(s): ${countBtn}`)
+      })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 39 - jQuery Fundamentals</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+    <style>
+      .over {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Demonstrate how to handle click and double-click on a paragraph.</h2>
+
+    <h3>
+      Note: As the coordinates are window relative, so in this case relative to
+      the demo iframe
+    </h3>
+
+    <p>Click or double click here.</p>
+    <p id="result"></p>
+
+    <script>
+      // my solution
+      $("p").on("click", function (e) {
+        // $("#result").text(`Click happened! (${e.screenX}, ${e.screenY})`) - wrong
+        $("#result").text(`Click happened! (${e.pageX}, ${e.pageY})`)
+      })
+
+      $("p").on("dblclick", function (e) {
+        $("#result").text("Double-click happend")
+      })
+
+      $("#result").on("mouseenter mouseleave", function (e) {
+        $(this).toggleClass("over")
+      })
+
+      // w3 solution
+      //   $("p").bind("click", function (e) {
+      //     var str = `(${e.pageX}, ${e.pageY})`
+      //     $("#result").text(`Click happend! ${str}`)
+      //   })
+      //   $("p").bind("dblclick", function () {
+      //     $("#result").text("Double-click happened")
+      //   })
+      //   $("#result").bind("mouseenter mouseleave", function (e) {
+      //     $(this).toggleClass("over")
+      //   })
+    </script>
+  </body>
+</html>

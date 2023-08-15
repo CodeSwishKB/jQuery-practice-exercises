@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 43 - jQuery fundamentals</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+  </head>
+  <body>
+    <h2>Disable a callback list from doing anything more.</h2>
+    <p></p>
+    <button>Click to Disable call</button>
+
+    <script>
+      $("button").on("click", function () {
+        var func1 = function (value) {
+          $("p").append(`func1: ${value}`)
+        }
+
+        var $callback = $.Callbacks()
+
+        $callback.add(func1)
+        $callback.fire("jQuery")
+
+        $callback.disable()
+        $callback.fire("JavaScript")
+      })
+    </script>
+  </body>
+</html>

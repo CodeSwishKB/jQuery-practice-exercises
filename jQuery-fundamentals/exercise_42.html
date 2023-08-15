@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 42 - jQuery fundamentals</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+  </head>
+  <body>
+    <h2>
+      Using jQuery add a callback or a collection of callbacks to a callback
+      list.
+    </h2>
+    <p></p>
+    <button>click to call</button>
+
+    <script>
+      $("button").on("click", callBacks)
+
+      function callBacks() {
+        var func1 = function (value) {
+          $("p").append(`<br>fucn1: ${value}`)
+        }
+
+        var func2 = function (value) {
+          $("p").append(`<br>func2: ${value}`)
+        }
+
+        var $callback = $.Callbacks()
+
+        $callback.add(func1)
+        $callback.fire("jQuery")
+
+        $callback.add(func2)
+        $callback.fire("JavaScript")
+
+        // $callback.remove(func1)
+        // $callback.fire("jQuery")
+      }
+    </script>
+  </body>
+</html>

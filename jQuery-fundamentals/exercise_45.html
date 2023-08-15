@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 45 - jQuery Fundamentals</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+    <style>
+      .red {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Using jQuery remove all of the callbacks from a list.</h2>
+    <p></p>
+    <button>remove</button>
+
+    <script>
+      $("button").on("click", function () {
+        var func1 = function (value1, value2) {
+          $("p").append(`func1: ${value1}, ${value2} <br>`)
+        }
+
+        var func2 = function (value1, value2) {
+          $("p").append(`func2: ${value1}, ${value2}`)
+        }
+
+        var $callback = $.Callbacks()
+
+        $callback.add(func1)
+        $callback.add(func2)
+
+        var isEmpty = $callback.empty()
+
+        $("p").append(
+          `It will return false when the func1 is empty: <span class="${
+            isEmpty ? "red" : ""
+          }">${$callback.has(func1)}</span> <br>`
+        )
+        $("p").append(
+          `It will return false when the funct2 is empty: <span class="${
+            isEmpty ? "red" : ""
+          }">${$callback.has(func2)}</span>`
+        )
+      })
+    </script>
+  </body>
+</html>

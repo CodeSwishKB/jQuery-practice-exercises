@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 38 - jQuery Fundamentals</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+  </head>
+  <body>
+    <h2>Inserts a jQuery object before all paragraphs.</h2>
+    <p>PHP Tutorial</p>
+    <b>w3resource</b><br /><br />
+    <button id="button1">Click to see the effect</button>
+    <script>
+      $("button").on("click", function () {
+        $("p").before($("b"))
+      })
+    </script>
+  </body>
+</html>

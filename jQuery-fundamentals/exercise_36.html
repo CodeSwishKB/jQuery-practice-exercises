@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 36 - jQuery Fundamentals</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+  </head>
+  <body>
+    <h2>Inserts some HTML before all paragraphs using JQuery.</h2>
+    <p>PHP Tutorial</p>
+    <p>Python Tutorial</p>
+    <p>Java Tutorial</p>
+    <button id="button1">Click to see the effect</button>
+    <script>
+      // my solution
+      $("button").on("click", function () {
+        $("<span><em>w3resource.com </em></span>").insertBefore("p")
+      })
+
+      // w3resource solution
+      $("button").on("click", function () {
+        $("p").before("<i>w3resource.com</i>")
+      })
+    </script>
+  </body>
+</html>

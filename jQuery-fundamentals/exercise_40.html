@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 40 - jQuery fundamentals</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+  </head>
+  <body>
+    <form>
+      <h2>Display a message when the focus is removed from an element.</h2>
+      <h3>Note: Set and remove focus from field1.</h3>
+      <input id="target" type="text" value="Field 1" />
+      <input type="text" value="Field 2" />
+    </form>
+    <p>Set and remove focus from field1</p>
+
+    <script>
+      var $msg = "Focus removed"
+      $("#target").blur(function () {
+        $("p").text($msg).css("color", "red")
+      })
+    </script>
+  </body>
+</html>
