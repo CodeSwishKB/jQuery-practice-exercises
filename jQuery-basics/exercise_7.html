@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 7</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+    <style>
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      table tr th {
+        border: 1px solid #d0f5a9;
+        padding: 5px;
+      }
+
+      table tr td {
+        border: 1px solid #d0f5a9;
+        padding: 5px;
+      }
+
+      .zebra {
+        background-color: #d0f5a9;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Create a Zebra Stripes table effect.</h2>
+
+    <div class="table-style">
+      <table>
+        <tr>
+          <th>Student Name</th>
+          <th>Marks in Science</th>
+        </tr>
+        <tr>
+          <td>Janet</td>
+          <td>85.00</td>
+        </tr>
+        <tr>
+          <td>David</td>
+          <td>92.00</td>
+        </tr>
+        <tr>
+          <td>Arthur</td>
+          <td>97.00</td>
+        </tr>
+        <tr>
+          <td>Bill</td>
+          <td>82.00</td>
+        </tr>
+        <tr>
+          <td>Janet</td>
+          <td>85.00</td>
+        </tr>
+      </table>
+    </div>
+    <script>
+      $(function () {
+        $("table tr:nth-child(even)").addClass("zebra")
+      })
+    </script>
+  </body>
+</html>

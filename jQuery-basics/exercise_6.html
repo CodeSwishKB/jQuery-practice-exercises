@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 6</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+  </head>
+  <body>
+    <h2 id="blink">Blink text using jQuery</h2>
+    <script>
+      $(function () {
+        setInterval(function () {
+          $("#blink").fadeIn(500)
+          $("#blink").fadeOut(500)
+        }, 1000)
+      })
+      /* $('#blink').each(() => {
+  var el = $(this)
+  setInterval(function(){
+    if (el.css('visibility') == 'hidden'){
+      el.css('visibiblity', 'visible')
+    } else {
+      el.css('visibility', 'hidden')
+    }
+  }, 500)
+}) */
+    </script>
+  </body>
+</html>
