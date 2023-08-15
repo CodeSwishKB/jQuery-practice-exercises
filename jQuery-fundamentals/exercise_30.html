@@ -3,34 +3,33 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>exercise 1 - jQuery Fundamentals</title>
+    <title>exercise 30 - jQuery Fundamentals</title>
     <script src="/jquery-3.7.0.min.js"></script>
     <style>
-      p {
-        font-weight: bold;
-        font-size: 18px;
-        color: green;
+      .yellow {
+        background-color: yellow;
       }
     </style>
   </head>
   <body>
     <h2>
-      Using jQuery find all textareas, and makes a border. Then adds all
-      paragraphs to the jQuery object to set their borders red.
+      Using jQuery find all the divisions with a name attribute that contains
+      'tutorial' and sets the background color yellow.
     </h2>
+    <div name="tutorial-php">
+      <p>PHP</p>
+    </div>
+    <div name="java-articles">
+      <p>Java</p>
+    </div>
+    <div name="python-tutorial-and-exercises">
+      <p>Python</p>
+    </div>
 
-    <textarea name="" id="" cols="20" rows="5">jQuery</textarea>
-    <textarea name="" id="" cols="20" rows="5">JavaScript</textarea>
-
-    <p>jQuery</p>
-    <p>JavaScript</p>
-    <button>Click to check the Effect</button>
+    <button id="button1">Click to see the effect</button>
     <script>
-      $("button").on("click", function () {
-        $("textarea")
-          .css("border", "2px solid red")
-          .add("p")
-          .css("border", "2px solid red")
+      $("#button1").on("click", function () {
+        $("div[name*='tutorial']").addClass("yellow")
       })
     </script>
   </body>

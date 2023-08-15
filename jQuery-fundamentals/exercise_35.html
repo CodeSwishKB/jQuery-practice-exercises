@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>exercise 1 - jQuery Fundamentals</title>
+    <title>exercise 35 - jQuery Fundamentals</title>
     <script src="/jquery-3.7.0.min.js"></script>
     <style>
       p {
@@ -15,22 +15,17 @@
   </head>
   <body>
     <h2>
-      Using jQuery find all textareas, and makes a border. Then adds all
-      paragraphs to the jQuery object to set their borders red.
+      Finds all inputs with an attribute name that starts with 'P' and puts text
+      in them.
     </h2>
 
-    <textarea name="" id="" cols="20" rows="5">jQuery</textarea>
-    <textarea name="" id="" cols="20" rows="5">JavaScript</textarea>
-
-    <p>jQuery</p>
-    <p>JavaScript</p>
-    <button>Click to check the Effect</button>
+    <input type="text" name="Potato" />
+    <input type="text" name="Puto" />
+    <input type="text" name="puta" /><br /><br />
+    <button id="button1">Click to see the effect</button>
     <script>
       $("button").on("click", function () {
-        $("textarea")
-          .css("border", "2px solid red")
-          .add("p")
-          .css("border", "2px solid red")
+        $('input[name^="P"]').val("Tutorial and Exerices")
       })
     </script>
   </body>

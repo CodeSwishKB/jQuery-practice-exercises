@@ -3,35 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>exercise 1 - jQuery Fundamentals</title>
+    <title>exercise 26 - jQuery Fundamentals</title>
     <script src="/jquery-3.7.0.min.js"></script>
-    <style>
-      p {
-        font-weight: bold;
-        font-size: 18px;
-        color: green;
-      }
-    </style>
   </head>
   <body>
-    <h2>
-      Using jQuery find all textareas, and makes a border. Then adds all
-      paragraphs to the jQuery object to set their borders red.
-    </h2>
+    <h2>Using jQuery append all spans to the element with specified id.</h2>
 
-    <textarea name="" id="" cols="20" rows="5">jQuery</textarea>
-    <textarea name="" id="" cols="20" rows="5">JavaScript</textarea>
-
-    <p>jQuery</p>
-    <p>JavaScript</p>
-    <button>Click to check the Effect</button>
+    <span> Exercises </span>
+    <p id="myid">jQuery</p>
+    <button id="button1">Click to see the effect</button>
     <script>
+      // w3 solution
       $("button").on("click", function () {
-        $("textarea")
-          .css("border", "2px solid red")
-          .add("p")
-          .css("border", "2px solid red")
+        $("span").appendTo("#myid")
       })
+
+      // my solution
+      /* $('button').on('click', function(){	
+  $('p').append($('span'))
+})
+
+ */
     </script>
   </body>
 </html>

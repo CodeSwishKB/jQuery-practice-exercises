@@ -3,35 +3,39 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>exercise 1 - jQuery Fundamentals</title>
+    <title>exercise 22 - jQuery Fundamentals</title>
     <script src="/jquery-3.7.0.min.js"></script>
     <style>
-      p {
-        font-weight: bold;
-        font-size: 18px;
-        color: green;
+      div {
+        background: #b0e0e6;
+        border: 1px solid #e30ae8;
+        width: 20px;
+        height: 30px;
+        margin: 0 5px;
+        float: left;
+      }
+      div.colored {
+        background: #000000;
       }
     </style>
   </head>
   <body>
-    <h2>
-      Using jQuery find all textareas, and makes a border. Then adds all
-      paragraphs to the jQuery object to set their borders red.
-    </h2>
+    <h2>Using jQuery change the color of any div that is animated.</h2>
 
-    <textarea name="" id="" cols="20" rows="5">jQuery</textarea>
-    <textarea name="" id="" cols="20" rows="5">JavaScript</textarea>
-
-    <p>jQuery</p>
-    <p>JavaScript</p>
-    <button>Click to check the Effect</button>
+    <div id="div1"></div>
+    <div id="div2"></div>
+    <div id="div3"></div>
+    <button id="button1">Click to see the effect</button>
     <script>
       $("button").on("click", function () {
-        $("textarea")
-          .css("border", "2px solid red")
-          .add("p")
-          .css("border", "2px solid red")
+        $("div:animated").toggleClass("colored")
       })
+
+      function slideAnimate() {
+        $("#div1, #div2").slideToggle("slow", slideAnimate)
+      }
+
+      slideAnimate()
     </script>
   </body>
 </html>

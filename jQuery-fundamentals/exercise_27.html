@@ -3,34 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>exercise 1 - jQuery Fundamentals</title>
+    <title>exercise 27 - jQuery Fundamentals</title>
     <script src="/jquery-3.7.0.min.js"></script>
-    <style>
-      p {
-        font-weight: bold;
-        font-size: 18px;
-        color: green;
-      }
-    </style>
   </head>
   <body>
     <h2>
-      Using jQuery find all textareas, and makes a border. Then adds all
-      paragraphs to the jQuery object to set their borders red.
+      Using jQuery display the checked attribute and property of a checkbox as
+      it changes.
     </h2>
 
-    <textarea name="" id="" cols="20" rows="5">jQuery</textarea>
-    <textarea name="" id="" cols="20" rows="5">JavaScript</textarea>
+    <input id="check1" type="checkbox" checked="checked" />
+    <label for="check1">Check me</label>
 
-    <p>jQuery</p>
-    <p>JavaScript</p>
-    <button>Click to check the Effect</button>
+    <p id="display"></p>
     <script>
-      $("button").on("click", function () {
-        $("textarea")
-          .css("border", "2px solid red")
-          .add("p")
-          .css("border", "2px solid red")
+      $("input").on("change", function () {
+        var $input = $(this)
+        $("span").appendTo("#myid")
+        $("#display").html(`.atrr( 'checked' ) <br>
+  										.prop( 'checked' ): ${$input.prop(
+                        "checked"
+                      )}<br> .is (	':checked' ): ${$input.is(":checked")}`)
       })
     </script>
   </body>

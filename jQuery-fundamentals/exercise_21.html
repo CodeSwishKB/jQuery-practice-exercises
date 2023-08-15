@@ -3,34 +3,47 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>exercise 1 - jQuery Fundamentals</title>
+    <title>exercise 21 - jQuery Fundamentals</title>
     <script src="/jquery-3.7.0.min.js"></script>
     <style>
-      p {
-        font-weight: bold;
-        font-size: 18px;
-        color: green;
+      div {
+        position: relative;
+        background-color: #b0e0e6;
+        width: 45px;
+        height: 45px;
+        float: left;
+        margin: 5px;
       }
     </style>
   </head>
   <body>
     <h2>
-      Using jQuery find all textareas, and makes a border. Then adds all
-      paragraphs to the jQuery object to set their borders red.
+      Using jQuery animates the first div's left property and synchronizes the
+      remaining divs.
     </h2>
+    <h3>
+      Note: Use the step function to set their left properties at each stage of
+      the animation
+    </h3>
 
-    <textarea name="" id="" cols="20" rows="5">jQuery</textarea>
-    <textarea name="" id="" cols="20" rows="5">JavaScript</textarea>
-
-    <p>jQuery</p>
-    <p>JavaScript</p>
-    <button>Click to check the Effect</button>
+    <p><button id="run">Click to Run</button></p>
+    <div class="block"></div>
+    <div class="block"></div>
+    <div class="block"></div>
+    <div class="block"></div>
     <script>
       $("button").on("click", function () {
-        $("textarea")
-          .css("border", "2px solid red")
-          .add("p")
-          .css("border", "2px solid red")
+        $(".block:first").animate(
+          {
+            left: "100",
+          },
+          {
+            duration: 3000,
+            step: function (now, fx) {
+              $(".block").slice(1).css("left", now)
+            },
+          }
+        )
       })
     </script>
   </body>

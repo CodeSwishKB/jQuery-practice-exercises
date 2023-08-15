@@ -3,34 +3,46 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>exercise 1 - jQuery Fundamentals</title>
+    <title>exercise 18 - jQuery Fundamentals</title>
     <script src="/jquery-3.7.0.min.js"></script>
     <style>
+      #iddiv > div,
+      span,
       p {
-        font-weight: bold;
-        font-size: 18px;
-        color: green;
+        width: 160px;
+        height: 40px;
+        padding: 10px;
+        margin: 10px;
+        float: left;
+        background-color: #b0e0e6;
+      }
+
+      button {
+        display: block;
+        clear: both;
+        margin: 10px;
+      }
+
+      .border {
+        border: 3px solid blue;
       }
     </style>
   </head>
   <body>
-    <h2>
-      Using jQuery find all textareas, and makes a border. Then adds all
-      paragraphs to the jQuery object to set their borders red.
-    </h2>
+    <h2>Using jQuery count all elements within a division.</h2>
 
-    <textarea name="" id="" cols="20" rows="5">jQuery</textarea>
-    <textarea name="" id="" cols="20" rows="5">JavaScript</textarea>
+    <h2 id="display"></h2>
 
-    <p>jQuery</p>
-    <p>JavaScript</p>
-    <button>Click to check the Effect</button>
+    <div id="iddiv">
+      <span>This is a span</span>
+      <p>This is a Paragraph</p>
+      <button id="button1">Click to see the effect</button>
+    </div>
     <script>
+      // my solution
       $("button").on("click", function () {
-        $("textarea")
-          .css("border", "2px solid red")
-          .add("p")
-          .css("border", "2px solid red")
+        var count = $("#iddiv").find("*").addClass("border").length
+        $("#display").after(`<h2>${count} element(s) found`)
       })
     </script>
   </body>

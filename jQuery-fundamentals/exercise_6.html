@@ -3,34 +3,35 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>exercise 1 - jQuery Fundamentals</title>
+    <title>exercise 6 - jQuery Fundamentals</title>
     <script src="/jquery-3.7.0.min.js"></script>
     <style>
       p {
+        margin: 8px;
+        font-size: 16px;
+      }
+      .w3r_font_color {
+        color: blue;
         font-weight: bold;
-        font-size: 18px;
-        color: green;
+      }
+      .w3r_background {
+        background: orange;
       }
     </style>
   </head>
   <body>
     <h2>
-      Using jQuery find all textareas, and makes a border. Then adds all
-      paragraphs to the jQuery object to set their borders red.
+      Using jQuery add the class " w3r_font_color " to the last paragraph
+      element.
     </h2>
+    <p>PHP</p>
+    <p>Python</p>
+    <p>Java</p>
 
-    <textarea name="" id="" cols="20" rows="5">jQuery</textarea>
-    <textarea name="" id="" cols="20" rows="5">JavaScript</textarea>
-
-    <p>jQuery</p>
-    <p>JavaScript</p>
-    <button>Click to check the Effect</button>
+    <button>add class</button>
     <script>
       $("button").on("click", function () {
-        $("textarea")
-          .css("border", "2px solid red")
-          .add("p")
-          .css("border", "2px solid red")
+        $("p").last().addClass("w3r_font_color w3r_background ")
       })
     </script>
   </body>

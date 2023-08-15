@@ -3,34 +3,66 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>exercise 1 - jQuery Fundamentals</title>
+    <title>exercise 20 - jQuery Fundamentals</title>
     <script src="/jquery-3.7.0.min.js"></script>
     <style>
-      p {
-        font-weight: bold;
-        font-size: 18px;
-        color: green;
+      div {
+        position: absolute;
+        background-color: #b0e0e6;
+        left: 40px;
+        width: 80px;
+        height: 80px;
+        margin: 5px;
+      }
+
+      button {
+        font-size: 20px;
+        cursor: pointer;
       }
     </style>
   </head>
   <body>
-    <h2>
-      Using jQuery find all textareas, and makes a border. Then adds all
-      paragraphs to the jQuery object to set their borders red.
-    </h2>
-
-    <textarea name="" id="" cols="20" rows="5">jQuery</textarea>
-    <textarea name="" id="" cols="20" rows="5">JavaScript</textarea>
-
-    <p>jQuery</p>
-    <p>JavaScript</p>
-    <button>Click to check the Effect</button>
+    <h2>Using jQuery animates a div's left property with a relative value.</h2>
+    <button id="left">◀</button>
+    <button id="right">▶</button>
+    <div class="block"></div>
     <script>
-      $("button").on("click", function () {
-        $("textarea")
-          .css("border", "2px solid red")
-          .add("p")
-          .css("border", "2px solid red")
+      // for keyboard arrow key
+      $("button").on("keydown", function (e) {
+        if (e.keyCode == 37) {
+          $("div").animate(
+            {
+              left: "-=50px",
+            },
+            "fast"
+          )
+        } else if (e.keyCode == 39) {
+          $("div").animate(
+            {
+              left: "+=50px",
+            },
+            "fast"
+          )
+        }
+      })
+
+      // for clicking (no keyboard arrow keys)
+      $("#left").on("click", function (e) {
+        $("div.block").animate(
+          {
+            left: "-=50px",
+          },
+          "fast"
+        )
+      })
+
+      $("#right").on("click", function () {
+        $("div.block").animate(
+          {
+            left: "+=50px",
+          },
+          "fast"
+        )
       })
     </script>
   </body>

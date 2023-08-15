@@ -3,34 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>exercise 1 - jQuery Fundamentals</title>
+    <title>exercise 15 - jQuery Fundamentals</title>
     <script src="/jquery-3.7.0.min.js"></script>
-    <style>
-      p {
-        font-weight: bold;
-        font-size: 18px;
-        color: green;
-      }
-    </style>
   </head>
   <body>
     <h2>
-      Using jQuery find all textareas, and makes a border. Then adds all
-      paragraphs to the jQuery object to set their borders red.
+      Register a handler to be called when all Ajax requests have completed.
     </h2>
+    <h4>
+      Note: Set up a basic Ajax load request, attach the event handler to the
+      document. Now make an Ajax request using any jQuery method.
+    </h4>
 
-    <textarea name="" id="" cols="20" rows="5">jQuery</textarea>
-    <textarea name="" id="" cols="20" rows="5">JavaScript</textarea>
-
-    <p>jQuery</p>
-    <p>JavaScript</p>
-    <button>Click to check the Effect</button>
+    <p id="click">jQuery: Click here</p>
+    <p id="tutorials"></p>
+    <p id="loaded"></p>
     <script>
-      $("button").on("click", function () {
-        $("textarea")
-          .css("border", "2px solid red")
-          .add("p")
-          .css("border", "2px solid red")
+      // my solution
+      $(document).ajaxStop(function () {
+        $("#loaded").text("Triggered ajaxStop handler.")
+      })
+
+      $("#click").on("click", function () {
+        $("#tutorials").load(
+          "https://www.w3resource.com/jquery-exercises/1/index.php"
+        )
       })
     </script>
   </body>

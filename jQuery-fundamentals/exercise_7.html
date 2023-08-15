@@ -3,34 +3,32 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>exercise 1 - jQuery Fundamentals</title>
+    <title>exercise 7 - jQuery Fundamentals</title>
     <script src="/jquery-3.7.0.min.js"></script>
     <style>
       p {
-        font-weight: bold;
-        font-size: 18px;
-        color: green;
+        background: white;
+      }
+      .w3r_bg_orange {
+        background: orange;
+      }
+      .w3r_bg_red {
+        color: red;
       }
     </style>
   </head>
   <body>
     <h2>
-      Using jQuery find all textareas, and makes a border. Then adds all
-      paragraphs to the jQuery object to set their borders red.
+      Using jQuery add a new class to an element that already has a class.
     </h2>
+    <p class="w3r_bg_orange">
+      The best way we learn anything is by practice and exercise questions.
+    </p>
 
-    <textarea name="" id="" cols="20" rows="5">jQuery</textarea>
-    <textarea name="" id="" cols="20" rows="5">JavaScript</textarea>
-
-    <p>jQuery</p>
-    <p>JavaScript</p>
-    <button>Click to check the Effect</button>
+    <button>add class</button>
     <script>
       $("button").on("click", function () {
-        $("textarea")
-          .css("border", "2px solid red")
-          .add("p")
-          .css("border", "2px solid red")
+        $("p").addClass("w3r_bg_red")
       })
     </script>
   </body>

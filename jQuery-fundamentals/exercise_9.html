@@ -6,31 +6,21 @@
     <title>exercise 1 - jQuery Fundamentals</title>
     <script src="/jquery-3.7.0.min.js"></script>
     <style>
-      p {
-        font-weight: bold;
-        font-size: 18px;
-        color: green;
+      button {
+        display: block;
+        margin-top: 10px;
       }
     </style>
   </head>
   <body>
-    <h2>
-      Using jQuery find all textareas, and makes a border. Then adds all
-      paragraphs to the jQuery object to set their borders red.
-    </h2>
+    <h2>Using jQuery insert a DOM element after all paragraphs.</h2>
+    <p>jQuery exercises</p>
 
-    <textarea name="" id="" cols="20" rows="5">jQuery</textarea>
-    <textarea name="" id="" cols="20" rows="5">JavaScript</textarea>
-
-    <p>jQuery</p>
-    <p>JavaScript</p>
-    <button>Click to check the Effect</button>
+    <button>Click to see the effect</button>
     <script>
+      // my solution
       $("button").on("click", function () {
-        $("textarea")
-          .css("border", "2px solid red")
-          .add("p")
-          .css("border", "2px solid red")
+        $("p").after(document.createTextNode(" With solutions."))
       })
     </script>
   </body>

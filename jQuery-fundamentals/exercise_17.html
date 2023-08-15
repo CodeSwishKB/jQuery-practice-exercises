@@ -3,34 +3,57 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>exercise 1 - jQuery Fundamentals</title>
+    <title>exercise 17 - jQuery Fundamentals</title>
     <script src="/jquery-3.7.0.min.js"></script>
     <style>
+      .container > div,
+      span,
       p {
-        font-weight: bold;
-        font-size: 18px;
-        color: green;
+        width: 160px;
+        height: 40px;
+        padding: 10px;
+        margin: 10px;
+        float: left;
+        background-color: #b0e0e6;
+      }
+
+      button {
+        display: block;
+        clear: both;
+        margin: 10px;
+      }
+
+      .border {
+        border: 3px solid blue;
       }
     </style>
   </head>
   <body>
     <h2>
-      Using jQuery find all textareas, and makes a border. Then adds all
-      paragraphs to the jQuery object to set their borders red.
+      Using jQuery count every element (including head, body, etc.) in the
+      document
     </h2>
 
-    <textarea name="" id="" cols="20" rows="5">jQuery</textarea>
-    <textarea name="" id="" cols="20" rows="5">JavaScript</textarea>
+    <h2 id="display"></h2>
 
-    <p>jQuery</p>
-    <p>JavaScript</p>
-    <button>Click to check the Effect</button>
+    <div class="container">
+      <div>This is division</div>
+      <span>This is a span</span>
+      <p>This is a Paragraph</p>
+    </div>
+
+    <button>Click to see the effects</button>
     <script>
+      // w3 solution
+      /* $('button').on('click', function(){
+  var count = $('*').css('border', '3px solid blue').length
+  $('body').prepend(`<h2>${count} elements found</h3>`)
+}) */
+
+      // my solution
       $("button").on("click", function () {
-        $("textarea")
-          .css("border", "2px solid red")
-          .add("p")
-          .css("border", "2px solid red")
+        var count = $("*").addClass("border").length
+        $("body").prepend(`<h2>${count} elements found`)
       })
     </script>
   </body>

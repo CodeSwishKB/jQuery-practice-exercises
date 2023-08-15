@@ -3,34 +3,37 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>exercise 1 - jQuery Fundamentals</title>
+    <title>exercise 33 - jQuery Fundamentals</title>
     <script src="/jquery-3.7.0.min.js"></script>
-    <style>
-      p {
-        font-weight: bold;
-        font-size: 18px;
-        color: green;
-      }
-    </style>
   </head>
   <body>
     <h2>
-      Using jQuery find all textareas, and makes a border. Then adds all
-      paragraphs to the jQuery object to set their borders red.
+      Finds all inputs with a value of "Red" and changes the text of the next
+      sibling span.
     </h2>
 
-    <textarea name="" id="" cols="20" rows="5">jQuery</textarea>
-    <textarea name="" id="" cols="20" rows="5">JavaScript</textarea>
-
-    <p>jQuery</p>
-    <p>JavaScript</p>
-    <button>Click to check the Effect</button>
+    <div>
+      <label>
+        <input type="radio" name="color" value="Red" />
+        <span>name?</span>
+      </label>
+    </div>
+    <div>
+      <label>
+        <input type="radio" name="color" value="Green" />
+        <span>value?</span>
+      </label>
+    </div>
+    <div>
+      <label>
+        <input type="radio" name="color" value="Black" />
+        <span>value?</span>
+      </label>
+    </div>
+    <button id="button1">Click to see the effect</button>
     <script>
       $("button").on("click", function () {
-        $("textarea")
-          .css("border", "2px solid red")
-          .add("p")
-          .css("border", "2px solid red")
+        $('input[value="Red"]').next().text("Red")
       })
     </script>
   </body>

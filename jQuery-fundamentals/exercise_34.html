@@ -3,34 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>exercise 1 - jQuery Fundamentals</title>
+    <title>exercise 34 - jQuery Fundamentals</title>
     <script src="/jquery-3.7.0.min.js"></script>
-    <style>
-      p {
-        font-weight: bold;
-        font-size: 18px;
-        color: green;
-      }
-    </style>
   </head>
   <body>
     <h2>
-      Using jQuery find all textareas, and makes a border. Then adds all
-      paragraphs to the jQuery object to set their borders red.
+      Finds all inputs that don't have the name 'color' and appends text to the
+      span next to it
     </h2>
 
-    <textarea name="" id="" cols="20" rows="5">jQuery</textarea>
-    <textarea name="" id="" cols="20" rows="5">JavaScript</textarea>
-
-    <p>jQuery</p>
-    <p>JavaScript</p>
-    <button>Click to check the Effect</button>
+    <div>
+      <input type="radio" name="color" value="Red" />
+      <span>Red</span>
+    </div>
+    <div>
+      <input type="radio" value="Cold Fusion" />
+      <span>Sky</span>
+    </div>
+    <div>
+      <input type="radio" name="accept" value="Evil Plans" />
+      <span>Sea</span>
+    </div>
+    <button id="button1">Click to see the effect</button>
     <script>
       $("button").on("click", function () {
-        $("textarea")
-          .css("border", "2px solid red")
-          .add("p")
-          .css("border", "2px solid red")
+        $('input[name!="color"]').next().append("<b> :not a color</b>")
       })
     </script>
   </body>

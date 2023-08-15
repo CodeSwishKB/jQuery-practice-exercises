@@ -3,34 +3,43 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>exercise 1 - jQuery Fundamentals</title>
+    <title>exercise 19 - jQuery Fundamentals</title>
     <script src="/jquery-3.7.0.min.js"></script>
     <style>
       p {
-        font-weight: bold;
-        font-size: 18px;
-        color: green;
+        background-color: #b0e0e6;
+        width: 70px;
+        border: 1px solid red;
       }
+      /* Animation properties :
+    width: "70%",
+    opacity: 0.4,
+    marginLeft: "0.6in",
+    fontSize: "3em",
+    borderWidth: "10px" */
     </style>
   </head>
   <body>
     <h2>
-      Using jQuery find all textareas, and makes a border. Then adds all
-      paragraphs to the jQuery object to set their borders red.
+      Using jQuery click the button to animate the paragraph element with a
+      number of different properties.
     </h2>
 
-    <textarea name="" id="" cols="20" rows="5">jQuery</textarea>
-    <textarea name="" id="" cols="20" rows="5">JavaScript</textarea>
-
-    <p>jQuery</p>
-    <p>JavaScript</p>
-    <button>Click to check the Effect</button>
+    <p id="pid">jQuery</p>
+    <button id="button1">Click to see the animation</button>
     <script>
+      // my solution
       $("button").on("click", function () {
-        $("textarea")
-          .css("border", "2px solid red")
-          .add("p")
-          .css("border", "2px solid red")
+        $("p").animate(
+          {
+            width: "70%",
+            opacity: 0.4,
+            marginLeft: "0.6in",
+            fontSize: "3em",
+            borderWidth: "10px",
+          },
+          1000
+        )
       })
     </script>
   </body>
