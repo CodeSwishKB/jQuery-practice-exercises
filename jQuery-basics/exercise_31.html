@@ -3,20 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Exercise 1</title>
+    <title>Exercise 31</title>
     <script src="/jquery-3.7.0.min.js"></script>
   </head>
   <body>
-    <h2>Test if jQuery is loaded.</h2>
-    <input id="test" value="Test" type="submit" />
-    <p id="display"></p>
+    <h2>Add options to a drop-down list using jQuery.</h2>
+    <select name="" id="dogs">
+      <option value="soulkie">Soulkie</option>
+      <option value="ganda">Ganda</option>
+    </select>
+    <button>Add options</button>
     <script>
-      $("#test").on("click", function () {
-        $(`<div>This is a click Event</div>`).appendTo("#display")
-      })
+      $("button").on("click", function () {
+        var options = {
+          val1: "arkie",
+          val2: "genri",
+        }
 
-      $("#test").on("dblclick", () => {
-        $(`<div>This is a double click Event</div>`).appendTo("#display")
+        var selectOption = $("#dogs")
+        $.each(options, function (val, text) {
+          selectOption.append($("<option></option>").val(val).html(text))
+        })
       })
     </script>
   </body>

@@ -3,30 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Exercise 4</title>
+    <title>Exercise 34</title>
     <script src="/jquery-3.7.0.min.js"></script>
   </head>
   <body>
-    <h3>
-      Disable/enable the form submit button. Disable the submit button until the
-      visitor has clicked a check box.
-    </h3>
-    <input type="checkbox" id="enable" />I accept<br />
-    <input
-      type="submit"
-      value="Accept"
-      id="submit-button"
-      disabled="disabled"
-    />
+    <h2>
+      How to get the selected value and currently selected text of a dropdown
+      box using jQuery?
+    </h2>
+    <select name="" id="options">
+      <option value="">Select a value</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option></select
+    ><br /><br />
+    <div class="display"></div>
+    <br />
+    <!-- <button>click</button> -->
     <script>
-      $(function () {
-        $("#enable").on("click", function () {
-          if ($("#submit-button").is(":disabled")) {
-            $("#submit-button").removeAttr("disabled")
-          } else {
-            $("#submit-button").attr("disabled", "disabled")
-          }
-        })
+      $("#options").on("change", function () {
+        var value = $("#options option:selected").text()
+
+        $(".display").text(value)
       })
     </script>
   </body>

@@ -5,27 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Exercise 4</title>
     <script src="/jquery-3.7.0.min.js"></script>
+    <style>
+      #g {
+        font-size: 20px;
+        color: violet;
+        background-color: rgba(69, 69, 69, 1);
+        padding: 5px;
+        text-align: center;
+      }
+    </style>
   </head>
   <body>
-    <h3>
-      Disable/enable the form submit button. Disable the submit button until the
-      visitor has clicked a check box.
-    </h3>
-    <input type="checkbox" id="enable" />I accept<br />
-    <input
-      type="submit"
-      value="Accept"
-      id="submit-button"
-      disabled="disabled"
-    />
+    <h3>Remove style added with .css() function using jQuery.</h3>
+    <p id="g">Hello World</p>
+    <button id="remove">Remove style</button>
     <script>
-      $(function () {
-        $("#enable").on("click", function () {
-          if ($("#submit-button").is(":disabled")) {
-            $("#submit-button").removeAttr("disabled")
-          } else {
-            $("#submit-button").attr("disabled", "disabled")
-          }
+      $("#remove").on("click", function () {
+        $("#g").css({
+          "font-size": "16px",
+          color: "black",
+          "background-color": "transparent",
+          padding: 0,
+          "text-align": "left",
         })
       })
     </script>

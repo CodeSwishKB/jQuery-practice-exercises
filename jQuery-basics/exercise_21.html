@@ -3,20 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Exercise 1</title>
+    <title>Exercise 21</title>
     <script src="/jquery-3.7.0.min.js"></script>
   </head>
   <body>
-    <h2>Test if jQuery is loaded.</h2>
-    <input id="test" value="Test" type="submit" />
-    <p id="display"></p>
+    <h2>Check if an object is a jQuery object.</h2>
+    <div class="object">[it is jQuery object?]</div>
+    <br />
+    <button>click to find out</button>
     <script>
-      $("#test").on("click", function () {
-        $(`<div>This is a click Event</div>`).appendTo("#display")
-      })
+      $("button").on("click", function () {
+        var obj1 = {
+          name: "kyle",
+        }
+        var obj2 = $("div")
 
-      $("#test").on("dblclick", () => {
-        $(`<div>This is a double click Event</div>`).appendTo("#display")
+        if (jQuery.type(obj1)) {
+          $("div").text("obj1 is a jQuery object")
+        }
+
+        if (jQuery.type(obj1)) {
+          $("div").text("obj2 is a jQuery object")
+        }
       })
     </script>
   </body>

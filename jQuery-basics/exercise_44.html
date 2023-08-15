@@ -3,21 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Exercise 4</title>
+    <title>Exercise 44</title>
     <script src="/jquery-3.7.0.min.js"></script>
+    <style>
+      li {
+        margin: 5px;
+        list-style: none;
+      }
+    </style>
   </head>
   <body>
-    <h3>
-      Fix broken images automatically. Hide the following broken img tag in the
-      body section.
-    </h3>
-    <a href="https://www.w3resource.com"
-      ><img
-        src="//www.w3resource.com/image/w3resourcelogo.gif"
-        alt="w3resource logo"
-        width="150"
-        height="78"
-        onerror="$(this).hide()"
-    /></a>
+    <h2>Find the class of the clicked element.</h2>
+    <ul>
+      <li class="num1"><button>1</button></li>
+      <li class="num2"><button>2</button></li>
+      <li class="num3"><button>3</button></li>
+      <li class="num4"><button>4</button></li>
+    </ul>
+    <p></p>
+    <script>
+      $("li").on("click", function () {
+        var getClass = this.className
+        var $p = $("p")
+
+        $p.text(`Class Name: ${getClass}`)
+      })
+    </script>
   </body>
 </html>

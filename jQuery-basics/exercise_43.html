@@ -3,21 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Exercise 3</title>
+    <title>Exercise 43</title>
     <script src="/jquery-3.7.0.min.js"></script>
   </head>
   <body>
-    <h2>Disable right click menu in html page using jquery.</h2>
-    <img
-      src="https://media.cnn.com/api/v1/images/stellar/prod/210602230802-01-puppy-social-skills-wellness-sci.jpg?q=x_2,y_88,h_898,w_1596,c_crop/h_720,w_1280"
-      alt=""
-      width="200px"
-    />
+    <h2>Set a value in a span using jQuery.</h2>
+    <span>lucky</span>
+    <button>set value</button>
     <script>
-      $(function () {
-        $("body").on("contextmenu", function () {
-          return false
-        })
+      $("button").on("click", function () {
+        $("span").text("pota")
       })
     </script>
   </body>

@@ -3,31 +3,35 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Exercise 4</title>
+    <title>Exercise 29</title>
     <script src="/jquery-3.7.0.min.js"></script>
   </head>
   <body>
-    <h3>
-      Disable/enable the form submit button. Disable the submit button until the
-      visitor has clicked a check box.
-    </h3>
-    <input type="checkbox" id="enable" />I accept<br />
-    <input
-      type="submit"
-      value="Accept"
-      id="submit-button"
-      disabled="disabled"
-    />
+    <h2> Remove a specific value from an array using jQuery.</h2>
+    <div class="array">
+    </div>
+     <button>remove number 3</button>
+  </body>
     <script>
-      $(function () {
-        $("#enable").on("click", function () {
-          if ($("#submit-button").is(":disabled")) {
-            $("#submit-button").removeAttr("disabled")
-          } else {
-            $("#submit-button").attr("disabled", "disabled")
-          }
-        })
-      })
+ var arrNum = [1, 2, 3, 4, 5]
+
+arrNum.forEach(function(num) {
+  $('.array').append(num)
+})
+
+$('button').on('click', function() {
+  arrNum = $.grep(arrNum, function(num) {
+    return num != 3
+  })
+
+  $('.array').empty()
+
+  arrNum.forEach(function(num) {
+    $('.array').append(num)
+  })
+
+})
+
     </script>
   </body>
 </html>

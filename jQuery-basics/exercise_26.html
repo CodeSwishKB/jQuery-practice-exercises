@@ -3,20 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Exercise 1</title>
+    <title>Exercise 26</title>
     <script src="/jquery-3.7.0.min.js"></script>
   </head>
   <body>
-    <h2>Test if jQuery is loaded.</h2>
-    <input id="test" value="Test" type="submit" />
-    <p id="display"></p>
-    <script>
-      $("#test").on("click", function () {
-        $(`<div>This is a click Event</div>`).appendTo("#display")
-      })
+    <h2>Find the absolute position of an element using jQuery.</h2>
+    <button>Click to get the absolute position of h2</button>
+    <p></p>
 
-      $("#test").on("dblclick", () => {
-        $(`<div>This is a double click Event</div>`).appendTo("#display")
+    <script>
+      $("button").on("click", function () {
+        var left = $("h2").offset().left
+        var top = $("h2").offset().top
+
+        $("p").text(`Absolute postion of h2 - Left: ${left}, Top: ${top}`)
       })
     </script>
   </body>

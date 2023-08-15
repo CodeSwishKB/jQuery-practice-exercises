@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 2 - jQuery Fundamentals</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+  </head>
+  <body>
+    <h2>
+      Set the background color red of the following elements using jQuery.
+    </h2>
+    <textarea name="" id="" cols="20" rows="5">TutoRIAL</textarea>
+    <p>jQuery</p>
+    <p>Exercises</p>
+    <button>Click to see the effect</button>
+    <script>
+      $("button").on("click", function () {
+        $("textarea").css("background", "red").add("p").css("background", "red")
+      })
+    </script>
+  </body>
+</html>

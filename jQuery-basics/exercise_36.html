@@ -3,21 +3,40 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Exercise 1</title>
+    <title>Exercise 36</title>
     <script src="/jquery-3.7.0.min.js"></script>
+    <style>
+      .box {
+        border: 1px solid black;
+        width: 150px;
+        height: 150px;
+        background-color: #66666666;
+      }
+
+      .green {
+        border: 1px solid black;
+        width: 250px;
+        height: 250px;
+        background-color: green;
+      }
+    </style>
   </head>
   <body>
-    <h2>Test if jQuery is loaded.</h2>
-    <input id="test" value="Test" type="submit" />
-    <p id="display"></p>
+    <h2>Change a CSS class using jQuery.</h2>
+    <div class="box"></div>
+    <br />
+
+    <button>click</button>
     <script>
-      $("#test").on("click", function () {
-        $(`<div>This is a click Event</div>`).appendTo("#display")
+      /* w3 solution */
+      $("button").on("click", function () {
+        $(".box").removeClass("box").addClass("green")
       })
 
-      $("#test").on("dblclick", () => {
-        $(`<div>This is a double click Event</div>`).appendTo("#display")
-      })
+      // my solution
+      /* $('button').on('click', function(){
+  $('.box').css('background', 'green')
+}) */
     </script>
   </body>
 </html>

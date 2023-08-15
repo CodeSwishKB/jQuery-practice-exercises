@@ -3,30 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Exercise 4</title>
+    <title>Exercise 39</title>
     <script src="/jquery-3.7.0.min.js"></script>
   </head>
   <body>
-    <h3>
-      Disable/enable the form submit button. Disable the submit button until the
-      visitor has clicked a check box.
-    </h3>
-    <input type="checkbox" id="enable" />I accept<br />
-    <input
-      type="submit"
-      value="Accept"
-      id="submit-button"
-      disabled="disabled"
-    />
+    <h2>
+      Restrict "number"-only input for textboxes including decimal points.
+    </h2>
+    <input type="text" />
     <script>
-      $(function () {
-        $("#enable").on("click", function () {
-          if ($("#submit-button").is(":disabled")) {
-            $("#submit-button").removeAttr("disabled")
-          } else {
-            $("#submit-button").attr("disabled", "disabled")
-          }
-        })
+      $("input").on("keyup", function () {
+        this.value = this.value.replace(/[^0-9\.]/g, "")
       })
     </script>
   </body>

@@ -7,17 +7,23 @@
     <script src="/jquery-3.7.0.min.js"></script>
   </head>
   <body>
-    <h3>
-      Fix broken images automatically. Hide the following broken img tag in the
-      body section.
-    </h3>
-    <a href="https://www.w3resource.com"
-      ><img
-        src="//www.w3resource.com/image/w3resourcelogo.gif"
-        alt="w3resource logo"
-        width="150"
-        height="78"
-        onerror="$(this).hide()"
-    /></a>
+    <h2>
+      Remove all the options of a select box and then add one option and select
+      it.
+    </h2>
+
+    <select name="" id="">
+      <option value="">1</option>
+      <option value="">2</option>
+      <option value="">3</option>
+    </select>
+    <br /><br />
+
+    <button>click me to remove all options and then and one option</button>
+    <script>
+      $("button").on("click", function () {
+        $("select").empty().append(`<option>69</option>`)
+      })
+    </script>
   </body>
 </html>

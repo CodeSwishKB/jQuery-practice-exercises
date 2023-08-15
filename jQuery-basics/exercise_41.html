@@ -3,20 +3,37 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Exercise 1</title>
+    <title>Exercise 41</title>
     <script src="/jquery-3.7.0.min.js"></script>
+    <style>
+      table {
+        border-collapse: collapse;
+      }
+
+      tr td {
+        border: 1px solid black;
+        padding: 10px;
+      }
+    </style>
   </head>
   <body>
-    <h2>Test if jQuery is loaded.</h2>
-    <input id="test" value="Test" type="submit" />
-    <p id="display"></p>
-    <script>
-      $("#test").on("click", function () {
-        $(`<div>This is a click Event</div>`).appendTo("#display")
-      })
+    <h2>Remove a specific table row using jQuery.</h2>
+    <table>
+      <tr>
+        <td>Name</td>
+        <td>Age</td>
+      </tr>
 
-      $("#test").on("dblclick", () => {
-        $(`<div>This is a double click Event</div>`).appendTo("#display")
+      <tr id="row1">
+        <td>Name</td>
+        <td>Age</td>
+      </tr>
+    </table>
+    <br />
+    <button>remove row</button>
+    <script>
+      $("button").on("click", function () {
+        $("#row1").remove()
       })
     </script>
   </body>

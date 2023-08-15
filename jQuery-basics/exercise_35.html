@@ -3,21 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Exercise 4</title>
+    <title>Exercise 35</title>
     <script src="/jquery-3.7.0.min.js"></script>
   </head>
   <body>
-    <h3>
-      Fix broken images automatically. Hide the following broken img tag in the
-      body section.
-    </h3>
-    <a href="https://www.w3resource.com"
-      ><img
-        src="//www.w3resource.com/image/w3resourcelogo.gif"
-        alt="w3resource logo"
-        width="150"
-        height="78"
-        onerror="$(this).hide()"
-    /></a>
+    <h2>Disable a link using jQuery.</h2>
+    <ul>
+      <li>
+        <a
+          href="https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg"
+          target="_blank"
+          >1</a
+        >
+      </li>
+      <li>2</li>
+      <li>3</li>
+    </ul>
+    <button>disable link</button>
+    <script>
+      $("button").on("click", function (e) {
+        e.preventDefault()
+        $("a").removeAttr("href")
+      })
+    </script>
   </body>
 </html>

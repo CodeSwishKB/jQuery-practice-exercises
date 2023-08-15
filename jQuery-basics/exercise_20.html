@@ -3,21 +3,45 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Exercise 4</title>
+    <title>Exercise 20</title>
     <script src="/jquery-3.7.0.min.js"></script>
+    <style>
+      .container {
+        border: 2px solid blue;
+        text-align: center;
+        padding: 100px;
+      }
+    </style>
   </head>
   <body>
-    <h3>
-      Fix broken images automatically. Hide the following broken img tag in the
-      body section.
-    </h3>
-    <a href="https://www.w3resource.com"
-      ><img
-        src="//www.w3resource.com/image/w3resourcelogo.gif"
-        alt="w3resource logo"
-        width="150"
-        height="78"
-        onerror="$(this).hide()"
-    /></a>
+    <h2>Distinguish between left and right mouse click with jQuery.</h2>
+    <div class="container">[Click Here]</div>
+    <script>
+      // my approach
+      /* $('.container').mousedown(function(e){
+  switch(e.which){
+    case 1:
+      $(this).text('Left mouse button pressed')
+      break;
+    case 2:
+      $(this).text('Middle button pressed')
+      break;
+    case 3:
+      $(this).text('Right mouse button pressed')
+      break;
+  }
+})
+ */
+
+      // w3 sources solution
+      $(".container").on("contextmenu", function () {
+        $(this).text("Right button clicked")
+        return false
+      })
+
+      $(".container").on("click", function () {
+        $(this).text("Left button clicked")
+      })
+    </script>
   </body>
 </html>

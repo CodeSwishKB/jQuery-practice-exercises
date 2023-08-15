@@ -3,30 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Exercise 4</title>
+    <title>Exercise 9</title>
     <script src="/jquery-3.7.0.min.js"></script>
   </head>
   <body>
-    <h3>
-      Disable/enable the form submit button. Disable the submit button until the
-      visitor has clicked a check box.
-    </h3>
-    <input type="checkbox" id="enable" />I accept<br />
-    <input
-      type="submit"
-      value="Accept"
-      id="submit-button"
-      disabled="disabled"
-    />
+    <h2>Limit character input in the textarea including count.</h2>
+    <p>Maximum 15 characters</p>
+    <textarea name="" id="" cols="30" rows="10" maxlength="15"></textarea>
+    <p><span id="count">15</span> Character(s) Remaining</p>
     <script>
-      $(function () {
-        $("#enable").on("click", function () {
-          if ($("#submit-button").is(":disabled")) {
-            $("#submit-button").removeAttr("disabled")
-          } else {
-            $("#submit-button").attr("disabled", "disabled")
-          }
-        })
+      var $maxLength = 15 // the given max length
+      $("textarea").keyup(function () {
+        // keyup function in textare
+        var l = $maxLength - $(this).val().length // given max lenght minus the type letters
+        $("#count").text(l) // change the numbers give in the span
       })
     </script>
   </body>

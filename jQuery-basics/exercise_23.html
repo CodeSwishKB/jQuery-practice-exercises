@@ -3,22 +3,82 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Exercise 3</title>
+    <title>Exercise 23</title>
     <script src="/jquery-3.7.0.min.js"></script>
+    <style>
+      table {
+        border-collapse: collapse;
+        text-align: center;
+      }
+
+      tr th,
+      td {
+        border: 1px solid black;
+        padding: 5px;
+      }
+    </style>
   </head>
   <body>
-    <h2>Disable right click menu in html page using jquery.</h2>
-    <img
-      src="https://media.cnn.com/api/v1/images/stellar/prod/210602230802-01-puppy-social-skills-wellness-sci.jpg?q=x_2,y_88,h_898,w_1596,c_crop/h_720,w_1280"
-      alt=""
-      width="200px"
-    />
+    <h2>Count number of rows and columns in a table using jQuery.</h2>
+
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Grade</th>
+        <th>Age</th>
+      </tr>
+      <tr>
+        <td>Kyle</td>
+        <td>12</td>
+        <td>20</td>
+      </tr>
+      <tr>
+        <td>Kobe</td>
+        <td>5</td>
+        <td>8</td>
+      </tr>
+      <tr>
+        <td>Uyang</td>
+        <td>5</td>
+        <td>8</td>
+      </tr>
+    </table>
+    <br />
+    <p></p>
+    <button id="rowBtn">Count Rows</button>
+    <button id="colBtn">Count Columns</button>
+
     <script>
-      $(function () {
-        $("body").on("contextmenu", function () {
-          return false
-        })
+      // my solution
+      $("#rowBtn").on("click", function () {
+        var rowCount = $("table tr").length
+        $("p").text(`Rows: ${rowCount}`)
       })
+
+      $("#colBtn").on("click", function () {
+        var colCount = $("table tr th").length
+        $("p").text(`columns: ${colCount}`)
+      })
+
+      // w3 solution
+      /* $.fn.rowCount = function(){
+  return $('tr', $(this).find('tbody')).length
+}
+
+$.fn.columnCount = function(){
+  return $('th', $(this).find('tbody')).length
+}
+
+var rowctr = $('table').rowCount()
+var colctr = $('table').columnCount()
+
+$('#rowBtn').on('click', function() {
+  $('p').text(`No of Rows: ${rowctr}`)
+})
+
+$('#colBtn').on('click', function() {
+  $('p').text(`No of Columns: ${colctr}`)
+}) */
     </script>
   </body>
 </html>

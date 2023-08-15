@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 5 - jQuery Fundamentals</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+    <style>
+      p {
+        margin: 8px;
+        font-size: 16px;
+      }
+
+      .w3r_font_color {
+        color: red;
+      }
+
+      .w3r_background {
+        background: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>
+      Using jQuery add the class " w3r_font_color " to the last paragraph
+      element.
+    </h2>
+    <p>PHP</p>
+    <p>Python</p>
+    <p>Java</p>
+
+    <button>add class</button>
+    <script>
+      $("button").on("click", function () {
+        $("p").last().addClass("w3r_font_color")
+      })
+    </script>
+  </body>
+</html>

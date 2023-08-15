@@ -3,21 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Exercise 3</title>
+    <title>Exercise 38</title>
     <script src="/jquery-3.7.0.min.js"></script>
   </head>
   <body>
-    <h2>Disable right click menu in html page using jquery.</h2>
-    <img
-      src="https://media.cnn.com/api/v1/images/stellar/prod/210602230802-01-puppy-social-skills-wellness-sci.jpg?q=x_2,y_88,h_898,w_1596,c_crop/h_720,w_1280"
-      alt=""
-      width="200px"
-    />
+    <h2>Count child elements using jQuery.</h2>
+    <button style="margin-right: 10px">count</button><span>0</span>
+    <div id="selected">
+      <p>Red</p>
+      <p>White</p>
+      <p>Green</p>
+      <p>Black</p>
+      <p>Blue</p>
+      <p>Orange</p>
+    </div>
     <script>
-      $(function () {
-        $("body").on("contextmenu", function () {
-          return false
-        })
+      var count = $("#selected p").length
+      var countDisplay = "span"
+      console.log(count)
+      $("button").on("click", function () {
+        $(countDisplay).text(`total count: ${count}`)
       })
     </script>
   </body>

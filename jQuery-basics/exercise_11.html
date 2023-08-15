@@ -3,20 +3,37 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Exercise 1</title>
+    <title>Exercise 11</title>
     <script src="/jquery-3.7.0.min.js"></script>
+    <style>
+      .divClass {
+        border: 2px solid yellow;
+        height: 100px;
+        width: 100px;
+        padding: 5px;
+        margin: 5px;
+        color: blue;
+      }
+    </style>
   </head>
   <body>
-    <h2>Test if jQuery is loaded.</h2>
-    <input id="test" value="Test" type="submit" />
-    <p id="display"></p>
+    <h2>Create a div using jQuery with style tag.</h2>
+    <div style="height: 10px"></div>
+    <button id="btn">click to create div</button>
     <script>
-      $("#test").on("click", function () {
-        $(`<div>This is a click Event</div>`).appendTo("#display")
-      })
+      var obj = {
+        // create variable obj to store attributes and value
+        class: "divClass",
+        css: {
+          color: "red",
+        },
+      }
 
-      $("#test").on("dblclick", () => {
-        $(`<div>This is a double click Event</div>`).appendTo("#display")
+      $("#btn").on("click", function () {
+        // clicking the button
+        var addition = $("<div>", obj) // added value
+        addition.html("Added text of the div") // added text
+        $("h2").append(addition) // add to body
       })
     </script>
   </body>

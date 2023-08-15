@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 4 - jQuery Fundamentals</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+    <style>
+      p,
+      div {
+        margin: 5px;
+        padding: 5px;
+      }
+
+      .left,
+      .right {
+        color: #c03199;
+        float: left;
+        width: 40%;
+      }
+
+      .border {
+        border: 2px solid #360e9b;
+      }
+
+      .background {
+        background-color: #cdc8b1;
+      }
+
+      button {
+        display: block;
+        clear: both;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>
+      Using jQuery add the previous set of elements on the stack to the current
+      set.
+    </h2>
+
+    <div class="left">
+      <p><b>Before</b> <code>addBack()</code></p>
+      <div class="before-addback">
+        <p>JavaScript</p>
+        <p>jQuery</p>
+      </div>
+    </div>
+
+    <div class="right">
+      <p><b>After</b> <code>addBack()</code></p>
+      <div class="after-addback">
+        <p>JavaScript</p>
+        <p>jQuery</p>
+      </div>
+    </div>
+
+    <button>add</button>
+    <script>
+      $("button").on("click", function () {
+        $("div.left, div.right").find("div, div > p").addClass("border")
+        $("div.before-addback").find("p").addClass("background")
+        $("div.after-addback").find("p").addBack().addClass("background")
+      })
+    </script>
+  </body>
+</html>

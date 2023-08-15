@@ -3,20 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Exercise 1</title>
+    <title>Exercise 16</title>
     <script src="/jquery-3.7.0.min.js"></script>
   </head>
   <body>
-    <h2>Test if jQuery is loaded.</h2>
-    <input id="test" value="Test" type="submit" />
-    <p id="display"></p>
+    <h2>Underline all the words of a text using jQuery.</h2>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt
+      consequuntur quis atque iure non, delectus cumque aliquid dolorum
+      similique ad ea soluta corrupti est, ipsum! Ipsam maxime, quos quis
+      aliquam!
+    </p>
+    <button>click to underline all words</button>
     <script>
-      $("#test").on("click", function () {
-        $(`<div>This is a click Event</div>`).appendTo("#display")
-      })
-
-      $("#test").on("dblclick", () => {
-        $(`<div>This is a double click Event</div>`).appendTo("#display")
+      $("button").on("click", function () {
+        $("p").css("text-decoration", "underline")
       })
     </script>
   </body>
