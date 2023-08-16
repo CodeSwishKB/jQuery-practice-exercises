@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 49 - jQuery Fundamentals</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+    <style>
+      .red {
+        color: red;
+      }
+      .green {
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Check if a callback list contains a specific callback.</h2>
+    <p></p>
+    <button>click to call</button>
+
+    <script>
+      $("button").on("click", function () {
+        var func1 = function (value1, value2) {
+          $("p").append(`func1: ${value1}, ${value2}<br>`)
+        }
+        var func2 = function (value1, value2) {
+          $("p").append(`func2: ${value1}, ${value2}`)
+        }
+
+        var $callback = $.Callbacks()
+
+        $callback.add(func1)
+
+        $callback.fire("jQuery", "JavaScript")
+
+        var has1 = $callback.has(func1)
+        var has2 = $callback.has(func2)
+
+        $("p").append(`<span class="${has1 ? "green" : ""}">${has1}</span><br>`)
+        $("p").append(`<span class="${has2 ? "" : "red"}">${has2}</span>`)
+      })
+    </script>
+  </body>
+</html>

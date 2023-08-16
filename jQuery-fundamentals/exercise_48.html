@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 48 - jQuery Fundamentals</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+  </head>
+  <body>
+    <h2>
+      Fire a list of callbacks with a specific context and an array of
+      arguments.</h2>
+      <p></p>
+      <button>click to call</button>
+
+      <script>
+        $("button").on("click", function () {
+          var func1 = function (value) {
+            $("p").append(`func1: ${value}<br>`)
+          }
+
+          var $callback = $.Callbacks()
+
+          $callback.add(func1)
+
+          $callback.fire("jQuery")
+          $callback.fire("JavaScript")
+
+          $("p").append(`${$callback.fired()}`)
+        })
+      </script>
+    </h2>
+  </body>
+</html>

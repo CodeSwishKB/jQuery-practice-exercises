@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 47 - jQuery Fundamentals</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+    <style>
+      .red {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>
+      Using jQuery check if the callbacks have already been called at least
+      once.
+    </h2>
+    <p></p>
+    <button>click to call</button>
+
+    <script>
+      $("button").on("click", function () {
+        var func1 = function (value) {
+          $("p").append(`func1: ${value}<br>`)
+        }
+
+        var $callback = $.Callbacks()
+
+        $callback.add(func1)
+
+        $callback.fire("jQuery")
+        $callback.fire("JavaScript")
+
+        var isCalled = $callback.fired()
+        $("p").append(
+          `is Called?: <span class="${
+            isCalled ? "red" : ""
+          }">${isCalled}</span>`
+        )
+      })
+    </script>
+  </body>
+</html>

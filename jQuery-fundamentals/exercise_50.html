@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 50 - jQuery Fundamentals</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+  </head>
+  <body>
+    <h2>Lock a callback list in its current state.</h2>
+    <p></p>
+    <button>click to lock</button>
+
+    <script>
+      $("button").on("click", function () {
+        var func1 = function (value) {
+          $("p").append(`func1: ${value}`)
+        }
+
+        var $callback = $.Callbacks()
+
+        $callback.add(func1)
+
+        $callback.fire("jQuery")
+
+        $callback.lock()
+
+        $callback.fire("JavaScript")
+
+        var has = $callback.has("jQuery")
+
+        // $("p").append(`<br>${has}`)
+      })
+    </script>
+  </body>
+</html>
