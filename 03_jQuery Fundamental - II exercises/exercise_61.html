@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 61 - jQuery Fundamentals#2</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+  </head>
+  <body>
+    <h2>
+      Display a message when the contextmenu event is triggered on the paragraph
+      elements.
+    </h2>
+
+    <p>Right click here.</p>
+    <p>Again right click here.</p>
+
+    <p style="font-size: 25px; color: red" id="display"></p>
+    <script>
+      $("p").on("contextmenu", function (e) {
+        e.preventDefault()
+        $("#display").text("You click the right click")
+      })
+    </script>
+  </body>
+</html>

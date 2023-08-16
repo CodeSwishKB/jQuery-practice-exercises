@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 56 - jQuery Fundamentals#2</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+  </head>
+  <body>
+    <h2>Finds the checked radio input.</h2>
+    <input type="radio" name="color" id="" value="Red" />Red<input
+      type="radio"
+      name="color"
+      id=""
+      value="Green"
+    />Green<input type="radio" name="color" id="" value="Blue" />Blue<input
+      type="radio"
+      name="color"
+      id=""
+      value="Black"
+    />Black
+
+    <p></p>
+
+    <script>
+      $("input[type=radio]").on("click", function () {
+        var value = $("input[name='color']:checked").val()
+        $("p").text(`${value} is checked!`)
+      })
+    </script>
+  </body>
+</html>

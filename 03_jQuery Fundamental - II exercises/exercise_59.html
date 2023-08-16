@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 59 - jQuery Fundamentals#2</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+  </head>
+  <body>
+    <h2>
+      Using jQuery find all children with a specified class of each division.
+    </h2>
+    <div>
+      <span>This is a span within a division.</span>
+      <p class="test">
+        This is a paragraph with specified class within a division.
+      </p>
+      <div class="test">This is a division with specified class.</div>
+      <p>This is another paragraph within a division</p>
+    </div>
+    <br />
+    <button>find</button>
+
+    <script>
+      // my solution
+      /*$("button").on("click", function () {
+        $(".test").css("color", "green")
+      })*/
+
+      // w3 solution
+      $("button").on("click", function () {
+        $("div").children(".test").css("color", "green")
+      })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 58 - jQuery Fundamentals#2</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+  </head>
+  <body>
+    <h2>Using jQuery find all children of each division.</h2>
+
+    <p>This is a paragraph.</p>
+    <div><p>This is a paragraph within a division.</p></div>
+    <p>Here is a another paragraph.</p>
+    <div>This is a <span>span</span> element within a division.</div>
+    <br />
+
+    <button>find childrens</button>
+    <script>
+      $("button").on("click", function () {
+        $("div").children().css("border-bottom", "3px double blue")
+      })
+    </script>
+  </body>
+</html>

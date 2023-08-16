@@ -5,6 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>exercise 55 - jQuery Fundamentals#2</title>
     <script src="/jquery-3.7.0.min.js"></script>
+    <style>
+      .green {
+        color: green;
+      }
+      .orange {
+        color: orange;
+      }
+      .red {
+        color: red;
+      }
+    </style>
   </head>
   <body>
     <h2>Finds all elements that are checked or selected.</h2>
@@ -18,8 +29,16 @@
     <p></p>
 
     <script>
-      var countInput = $("input").filter(":checked").length
-      $("p").text(`${countInput} are checked.`)
+      function checkCount() {
+        var countInput = $("input:checked").length
+
+        // var classToApply = ''
+        countInput <= 1
+          ? $("p").text(`${countInput} is checked.`)
+          : $("p").text(`${countInput} are checked.`)
+      }
+      checkCount()
+      $("input[type=checkbox]").on("click", checkCount)
     </script>
   </body>
 </html>
