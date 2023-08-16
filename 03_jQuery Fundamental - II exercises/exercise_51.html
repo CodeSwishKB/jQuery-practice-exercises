@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 51 - jQuery Fundamentals 2</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+    <style>
+      .red {
+        color: red;
+      }
+      .green {
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Check the lock-state of a callback list.</h2>
+    <p></p>
+    <button>click to check</button>
+
+    <script>
+      $("button").on("click", function () {
+        var func1 = function (value) {
+          $("p").append(`func1: ${value}<br>`)
+        }
+
+        var $callback = $.Callbacks()
+
+        $callback.add(func1)
+
+        $callback.fire("JavaScript")
+
+        $callback.lock()
+
+        var isLocked = $callback.locked()
+        $("p").append(
+          `is locked?: <span class="${
+            isLocked ? "green" : "red"
+          }">${isLocked}</span>`
+        )
+      })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 53 - jQuery Fundamentals 2</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+  </head>
+  <body>
+    <h2>
+      Attaches a change event to the select element (Use to create a drop-down
+      list.) that gets the text for each selected option and writes them in a
+      paragraph.
+    </h2>
+
+    <select name="" id="" multiple="multiple">
+      <option selected="selected">Red</option>
+      <option selected="selected">Green</option>
+      <option>Blue</option>
+      <option>Orange</option>
+      <option>Black</option>
+      <option>White</option>
+    </select>
+    <p></p>
+
+    <script>
+      // w3 solution
+      /* $("select")
+        .on("change", function () {
+          var str = ""
+          $("select option:selected").each(function () {
+            str += `${$(this).text()} `
+          })
+          $("p").text(`Selected Color: ${str}`).css("color", "blue")
+        })
+        .change()*/
+
+      // my solution
+      $("select")
+        .on("change", function () {
+          $(this).each(function () {
+            var $color = $(this).val()
+            $color === 1
+              ? $("p").text(`Selected Color: ${$color}`).css("color", "blue")
+              : $("p").text(`Selected Colors: ${$color}`).css("color", "blue")
+          })
+        })
+        .change()
+    </script>
+  </body>
+</html>

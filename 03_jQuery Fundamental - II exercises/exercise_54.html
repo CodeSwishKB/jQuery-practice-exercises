@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 54 - jQuery Fundamentals#2</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+    <style>
+      /* my solution */
+      /* span {
+        background: black;
+        border: 2px solid red;
+      } */
+    </style>
+  </head>
+  <body>
+    <!-- my solution -->
+    <!-- <h2>Finds all checkbox inputs</h2>
+    <input type="button" value="Input Button" />
+    <span><input type="checkbox" name="" id="" /></span>
+    <span><input type="checkbox" name="" id="" /></span>
+    <input type="button" value="Output Button" />
+    <select name="" id="">
+      <option value="">Option</option>
+    </select> -->
+    <p></p>
+    <button id="click">click</button><br /><br />
+
+    <!-- w3 solution -->
+    <form action="">
+      <input type="button" value="Input Button" />
+      <input type="checkbox" name="" id="" />
+      <input type="checkbox" name="" id="" />
+      <input type="hidden" name="" />
+      <input type="button" value="Ouput Button" />
+      <select name="" id="">
+        <option value="">Option</option>
+      </select>
+    </form>
+
+    <script>
+      // w3 solution
+      var input = $("form input:checkbox").wrap("<span></span>").parent().css({
+        background: "black",
+        border: "2px solid red",
+      })
+      $("#click").on("click", function () {
+        $("p").text(`No of checkbox: ${input.length}`).css("color", "blue")
+      })
+
+      // my solution
+      /*$("#click").on("click", function () {
+        var $checkbox = $("input[type=checkbox]")
+        $("p").text(`No. of checkbox: ${$checkbox.length}`).css("color", "blue")
+      })*/
+    </script>
+  </body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 52 - jQuery Fundamentals 2</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+  </head>
+  <body>
+    <h2>
+      Remove a single callback or a set of callbacks from a callback list.
+    </h2>
+    <p></p>
+    <button id="call">click to call</button>
+    <!-- <button id="remove">remove</button> -->
+
+    <script>
+      // w3 solution
+
+      $("button").on("click", function () {
+        var func1 = function (value) {
+          $("p").append(`func1: ${value}`)
+        }
+
+        var $callback = $.Callbacks()
+
+        $callback.add(func1)
+
+        $callback.fire("JavaScript")
+
+        $callback.lock()
+
+        $("p").append(`<br>${$callback.locked()}`)
+      })
+
+      // my solution
+      /* var $callback = $.Callbacks()
+      var func1 = function (value) {
+        $("p").append(`func1: ${value}<br>`)
+      }
+
+      var func2 = function (value) {
+        $("p").append(`func2: ${value} <br>`)
+      }
+      $callback.add(func1)
+      $callback.add(func2)
+
+      $("#call").on("click", function () {
+        $callback.fire("JavaScript")
+        $callback.fire("jQuery")
+      })
+
+      $("#remove").on("click", function () {
+        $callback.remove(func1)
+      })*/
+    </script>
+  </body>
+</html>

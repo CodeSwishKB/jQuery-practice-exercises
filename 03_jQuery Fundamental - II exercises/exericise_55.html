@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 55 - jQuery Fundamentals#2</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+  </head>
+  <body>
+    <h2>Finds all elements that are checked or selected.</h2>
+    <input type="checkbox" name="" id="" />Red
+    <input type="checkbox" name="" id="" />Green<input
+      type="checkbox"
+      name=""
+      id=""
+    />Blue<input type="checkbox" name="" id="" />Black
+
+    <p></p>
+
+    <script>
+      var countInput = $("input").filter(":checked").length
+      $("p").text(`${countInput} are checked.`)
+    </script>
+  </body>
+</html>
