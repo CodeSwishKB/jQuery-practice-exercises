@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 62 - jQuery Fundamentals#2</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+    <style>
+      .box {
+        background-color: red;
+        width: 150px;
+        height: 150px;
+      }
+      .green {
+        background-color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Using jQuery right click to toggle background color.</h2>
+    <div class="box"></div>
+    <p>Right click the box</p>
+
+    <script>
+      $("div").on("contextmenu", function (e) {
+        e.preventDefault()
+        $(this).toggleClass("green")
+      })
+    </script>
+  </body>
+</html>

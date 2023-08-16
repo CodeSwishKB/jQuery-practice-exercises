@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 63 - jQuery Fundamentals#2</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+    <style>
+      div {
+        height: 50px;
+        width: 50px;
+        background-color: red;
+        border: 1px solid black;
+        margin: 5px;
+        float: left;
+      }
+
+      div#box1 {
+        background-color: blue;
+      }
+
+      div#box2 {
+        background-color: rgb(15, 99, 30);
+      }
+
+      div#box3 {
+        background-color: #123456;
+      }
+
+      p {
+        clear: both;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Get the background color of a clicked division.</h2>
+
+    <div id="box1"></div>
+    <div id="box2"></div>
+    <div id="box3"></div>
+
+    <p></p>
+
+    <script>
+      // my solution
+      $("div").on("click", function () {
+        var $currentColor = $(this).css("background-color")
+        $("p").text(`${$currentColor}`)
+      })
+    </script>
+  </body>
+</html>
