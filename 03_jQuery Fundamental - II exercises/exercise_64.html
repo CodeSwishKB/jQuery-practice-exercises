@@ -5,16 +5,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>exercise 64 - jQuery Fundamentals#2</title>
     <script src="/jquery-3.7.0.min.js"></script>
+    <style>
+      div {
+        width: 50px;
+        height: 50px;
+        margin: 5px;
+        float: left;
+        padding: 5px;
+      }
+      #a {
+        background-color: red;
+        color: yellow;
+      }
+      #b {
+        background-color: rgb(15, 99, 30);
+        color: white;
+      }
+      #c {
+        background-color: rgb(18, 52, 86);
+        color: rgb(255, 204, 204);
+      }
+    </style>
   </head>
   <body>
-    <h2>Change the color of any paragraph to red on mouseover event.</h2>
+    <h2>
+      Get the styles (width, height, text color, and background color) of a
+      clicked division
+    </h2>
+    <p></p>
 
-    <p>jQuery Exercises, Practice and Solution.</p>
-    <p>Ajax Tutorial</p>
+    <div id="a">A</div>
+    <div id="b">B</div>
+    <div id="c">C</div>
 
     <script>
-      $("p").on("mouseover", function () {
-        $(this).css("color", "red")
+      // my solution
+      /*$("div").on("click", function () {
+        var $width = $(this).width()
+        var $height = $(this).height()
+        var $color = $(this).css("color")
+        var $bgc = $(this).css("background-color")
+
+        $("p")
+          .html(
+            `The click div has the following styles:<br> width: ${$width}px<br> height: ${$height}px<br> color: ${$color}<br> background-color: ${$bgc}`
+          )
+          .css("color", "blue")
+      })*/
+
+      // w3 solution
+      $("div").on("click", function () {
+        var html = ["The click div has the following styles:"]
+
+        var styleProps = $(this).css([
+          "width",
+          "height",
+          "color",
+          "background-color",
+        ])
+        $.each(styleProps, function (prop, value) {
+          html.push(`${prop}: ${value}`)
+        })
+
+        $("p").html(html.join("<br>")).css("color", "blue")
       })
     </script>
   </body>
