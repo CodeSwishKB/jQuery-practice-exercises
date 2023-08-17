@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 70 - jQuery Fundamentals#2</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+    <style>
+      span:first-child {
+        color: blue;
+      }
+      span:last-child {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Retrieve the stored value from the division element.</h2>
+    <div>My name is <span></span> and Im <span></span></div>
+    <br />
+    <button>Retrieve</button>
+    <script>
+      $("button").on("click", function () {
+        $("div").data("myData", { first: "Kyle", last: 20 })
+        $("span").first().text($("div").data("myData").first)
+        $("span").last().text($("div").data("myData").last)
+      })
+    </script>
+  </body>
+</html>

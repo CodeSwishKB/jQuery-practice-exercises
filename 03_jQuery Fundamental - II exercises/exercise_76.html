@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 76 - jQuery Fundamentals#2</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+    <style>
+      div {
+        margin: 25px;
+        height: 50px;
+        width: 50px;
+        position: absolute;
+        background-color: yellow;
+        left: 10px;
+        top: 150px;
+      }
+      div.blue {
+        background-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>
+      End a custom queue function using dequeue which allows the queue to keep
+      going.
+    </h2>
+    <h3>
+      Note: .dequeue() method is used to execute the next function on the queue
+      for the matched elements. When .dequeue() is called, the next function on
+      the queue is removed from the queue, and then executed. This function
+      should in turn (directly or indirectly) cause .dequeue() to be called, so
+      that the sequence can continue.
+    </h3>
+
+    <button>Start</button>
+    <div></div>
+
+    <script>
+      $("button").on("click", function () {
+        $("div")
+          .animate(
+            {
+              left: "+=200px",
+            },
+            1000
+          )
+          .animate(
+            {
+              top: "0px",
+            },
+            500
+          )
+          .queue(function () {
+            $(this).toggleClass("blue").dequeue()
+          })
+          .animate(
+            {
+              left: "10px",
+              top: "150px",
+            },
+            700
+          )
+      })
+    </script>
+  </body>
+</html>

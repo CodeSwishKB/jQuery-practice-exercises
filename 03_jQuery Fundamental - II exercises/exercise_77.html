@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 77 - jQuery Fundamentals#2</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+    <style>
+      form {
+        border: 2px solid blue;
+        background-color: #efe;
+        padding: 2px;
+      }
+      fieldset {
+        margin: 1px;
+        padding: 3px;
+      }
+      /* my solution */
+      /* #newsletter {
+        background-color: green;
+      } */
+    </style>
+  </head>
+  <body>
+    <h2>
+      Find all inputs that are descendants of a form and mark them with a dotted
+      red border .
+    </h2>
+    <h3>
+      Note: Descendant Selector ("ancestor descendant") selects all elements
+      that are descendants of a given ancestor. A descendant of an element could
+      be a child, grandchild, great-grandchild, and so on, of that element.
+    </h3>
+
+    <form>
+      <label for="name">Child of form:</label>
+      <input name="name" id="name" />
+      <fieldset>
+        <label for="newsletter">Grandchild of form, child of fieldset:</label>
+        <input name="newsletter" id="newsletter" />
+      </fieldset>
+    </form>
+    Sibling to form: <input name="none" /><br /><br />
+
+    <button>Find</button>
+
+    <script>
+      // w3 solution
+      $("button").on("click", function () {
+        $("form input").css("border", "2px dotted red")
+        $("form fieldset input").css("backgroundColor", "green")
+      })
+
+      // my solution
+      //   $("button").on("click", function () {
+      //     $("form").find("input").css({
+      //       border: "2px dotted red",
+      //     })
+      //   })
+    </script>
+  </body>
+</html>

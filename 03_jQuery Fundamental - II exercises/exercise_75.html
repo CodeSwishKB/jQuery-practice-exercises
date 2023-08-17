@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 75 - jQuery Fundamentals#2</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+    <style>
+      p {
+        background-color: orange;
+        padding: 5px;
+        font-weight: bolder;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Click on a paragraph and add another paragraph.</h2>
+    <p>Click me to add new paragraph.</p>
+
+    <script>
+      $("body").delegate("p", "click", function () {
+        $(this).after(`<p>New paragraph!</p>`)
+      })
+    </script>
+  </body>
+</html>

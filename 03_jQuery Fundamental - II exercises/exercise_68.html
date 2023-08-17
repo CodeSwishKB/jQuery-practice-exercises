@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 68 - jQuery Fundamentals#2</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+  </head>
+  <body>
+    <h2>
+      Change the font weight and color of paragraphs on mouseenter and
+      mouseleave.
+    </h2>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum quo quas
+      veritatis, consequatur dolore quasi quisquam soluta harum incidunt
+      deserunt explicabo quaerat qui dignissimos, cupiditate ducimus animi,
+      voluptatibus numquam quae voluptatem fuga provident. Quia iste vitae ad
+      sit commodi voluptatum ab deserunt neque? Cum unde obcaecati, magni
+      inventore ex adipisci?
+    </p>
+
+    <script>
+      // my solution
+      $("p").on("mouseenter", function () {
+        $(this).css({
+          "font-weight": "bolder",
+          color: "red",
+        })
+      })
+      $("p").on("mouseleave", function () {
+        var styles = {
+          color: "blue",
+          fontWeight: "",
+        }
+        $(this).css({
+          color: "blue",
+          "font-weight": "",
+        })
+      })
+
+      // w3 solution
+      /* $("p")
+        .on("mouseenter", function () {
+          $(this).css({
+            "font-weight": "bolder",
+            color: "red",
+          })
+        })
+        .on("mouseleave", function () {
+          var styles = {
+            color: "blue",
+            fontWeight: "",
+          }
+          $(this).css(styles)
+        }) */
+    </script>
+  </body>
+</html>

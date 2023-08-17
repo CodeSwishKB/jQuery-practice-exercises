@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 72 - jQuery Fundamentals#2</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+    <style>
+      .red {
+        background-color: red;
+      }
+      p {
+        background-color: blue;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Double click to toggle background color of a paragraph.</h2>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur eligendi
+      soluta ab cumque, iste optio voluptatem repellendus nihil! Corrupti
+      laboriosam pariatur id veritatis officia sint eaque accusamus nam atque
+      aut error voluptatum fuga eum quidem cum corporis placeat ex laborum quis
+      totam, quae facilis? Corporis facere eligendi accusamus ut doloremque.
+    </p>
+
+    <script>
+      $("p").on("dblclick", function () {
+        $(this).toggleClass("red")
+      })
+    </script>
+  </body>
+</html>

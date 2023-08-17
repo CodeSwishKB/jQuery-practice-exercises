@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 69 - jQuery Fundamentals#2</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+    <style>
+      div {
+        width: 100px;
+        height: 60px;
+        color: white;
+      }
+
+      #box1 {
+        background-color: rgb(123, 33, 69);
+      }
+      #box2 {
+        background-color: rgb(69, 69, 69);
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Increase the size of a division when you click it.</h2>
+    <div id="box1">Click to increase the size</div>
+    <div id="box2">Click to increase the size</div>
+
+    <script>
+      // my solution
+      //   $("div").on("click", function () {
+      //     var increase = 1.5
+      //     var currentWidth = parseInt($(this).css("width"), 10)
+
+      //     $(this).css({
+      //       width: currentWidth * increase,
+      //     })
+      //   })
+
+      // w3 solution
+      $("div").on("click", function () {
+        $(this).css({
+          width: function (index, value) {
+            return parseFloat(value) * 1.2
+          },
+          height: function (index, value) {
+            return parseFloat(value) * 1.2
+          },
+        })
+      })
+    </script>
+  </body>
+</html>

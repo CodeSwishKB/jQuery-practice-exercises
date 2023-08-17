@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 78 - jQuery Fundamentals#2</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+  </head>
+  <body>
+    <h2>Remove all paragraphs from the DOM.</h2>
+    <h3>
+      Note: .detach() is used to remove the set of matched elements from the
+      DOM.
+    </h3>
+    <p>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis,
+      nesciunt!
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Est architecto
+      doloremque et fuga autem tempora facere voluptatibus inventore doloribus
+      illum neque, nesciunt tempore distinctio soluta, tenetur vero! Vero,
+      assumenda porro corporis ut tempore blanditiis at? Quod explicabo
+      consectetur unde dolorum culpa, voluptates corrupti beatae, doloremque
+      soluta quia et sed iure veniam, minus at eaque cumque ea error eum ad
+      magnam impedit itaque? Nobis, tenetur iusto? Accusamus nostrum
+      consequuntur nemo dignissimos labore, voluptatum ullam tempore tempora
+      possimus explicabo ut ipsa expedita eaque eligendi quo earum quae
+      perspiciatis minima quasi molestiae optio magni soluta non! Eaque, neque
+      quibusdam minus cum ipsum iure.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis
+      voluptatibus ipsam adipisci dignissimos asperiores quas ducimus quibusdam,
+      libero ratione nemo tempore rerum illum labore harum error nihil
+      necessitatibus inventore? A reiciendis minus maxime inventore? Nulla eius
+      officia, quas dolore libero nesciunt laborum deleniti impedit voluptatem
+      culpa temporibus, dolorem, veniam fugit?
+    </p>
+
+    <button>remove all / bring back all</button>
+    <script>
+      // w3 solution
+      var p
+
+      $("button").on("click", function () {
+        p ? (p.appendTo("body"), p == null) : (p = $("p").detach())
+        // if (p) {
+        //   p.appendTo("body")
+        //   p = null
+        // } else {
+        //   p = $("p").detach()
+        // }
+      })
+
+      // my solution
+      //   $("button").on("click", function () {
+      //     $("p").detach()
+      //   })
+    </script>
+  </body>
+</html>

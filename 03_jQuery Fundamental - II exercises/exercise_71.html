@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 71 - jQuery Fundamentals#2</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+  </head>
+  <body>
+    <h2>
+      Display a message to the dblclick event on all paragraphs on a page.
+    </h2>
+
+    <p>DOUBLE CLICK ME!</p>
+
+    <script>
+      $("p").on("dblclick", function () {
+        $(this)
+          .text(
+            `Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis ratione ipsa nam dicta consequatur alias cupiditate laboriosam quod vero provident similique tempora perferendis error totam obcaecati veritatis, deleniti consequuntur itaque?`
+          )
+
+          .css("color", "rgb(69, 194, 48)")
+      })
+    </script>
+  </body>
+</html>

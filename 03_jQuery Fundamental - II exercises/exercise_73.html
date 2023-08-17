@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 73 - jQuery Fundamentals#2</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+  </head>
+  <body>
+    <h2>
+      Resolve a deferred object when the user clicks a button, triggering a
+      number of callback functions.
+    </h2>
+
+    <button>Go!!</button>
+    <p>Ready...</p>
+
+    <script>
+      function func1() {
+        $("p").append(" isa ")
+      }
+
+      function func2() {
+        $("p").append(" dalawa ")
+      }
+
+      function func3(n) {
+        $("p").append(`${n} tatlo ${n}`)
+      }
+
+      var $deferred = $.Deferred()
+
+      $deferred.done([func1, func2], func3, [func2, func1]).done(function (n) {
+        var $msg = `tapos na gago!`
+        var $colored = $("<span>").text($msg).css("color", "red")
+        $("p").append(`${n} `).append($colored)
+      })
+      $("button").on("click", function () {
+        $deferred.resolve("at")
+      })
+    </script>
+  </body>
+</html>
