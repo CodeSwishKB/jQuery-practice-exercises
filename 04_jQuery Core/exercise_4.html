@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 4 - jQuery Core</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+  </head>
+  <body>
+    <h2>Find the specific option tag text value of a selected option.</h2>
+    <select id="myselect">
+      <option value="1">Option-1</option>
+      <option value="2">Option-2</option>
+      <option value="3">Option-3</option>
+    </select>
+    <p></p>
+    <button>find</button>
+
+    <script>
+      $("button").on("click", function () {
+        var opt2 = $("select option[value=2]").text()
+        $("p").text(`you find ${opt2}`)
+      })
+    </script>
+  </body>
+</html>

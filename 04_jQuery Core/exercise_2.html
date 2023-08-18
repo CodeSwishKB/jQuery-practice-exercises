@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 2 - jQuery Core</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+  </head>
+  <body>
+    <h2>Set the background color of a page to red.</h2>
+    <button>set now!</button>
+
+    <script>
+      $("button").on("click", function () {
+        $("body").css("background-color", "red")
+      })
+    </script>
+  </body>
+</html>

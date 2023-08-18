@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 1 - jQuery Core</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+  </head>
+  <body>
+    <h2>
+      Find all h1 elements that are children of a div element and apply a
+      background to them.
+    </h2>
+    <h1>abc</h1>
+    <div>
+      <h1>div-1</h1>
+      <h1>div-2</h1>
+    </div>
+    <h1>xyz</h1>
+
+    <button>find</button>
+    <script>
+      // w3 solution
+      $("button").on("click", function () {
+        $("div > h1").css("background-color", "lightblue")
+      })
+
+      // my solution
+      //   $("button").on("click", function () {
+      //     $("div").find("h1").css("background-color", "lightblue")
+      //   })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 5 - jQuery Core</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+  </head>
+  <body>
+    <h2>Check/uncheck a checkbox input or radio button?</h2>
+    <input type="radio" name="sex" value="male" checked>Male<br>
+    <input type="radio" name="sex" value="female">Female
+    </form>
+
+    <button id="check">Check</button>
+    <button id="uncheck">uncheck</button>
+    <script>
+    //w3 solution
+    $('input:radio[value=female]').prop("checked", true );;
+
+        // my solution
+        // $('#check').on('click', function(){
+        //     $('input[name="sex"][value="female"]').prop('checked', true)
+        // })
+        // $('#uncheck').on('click', function(){
+        //     $('input[name="sex"][value="female"]').prop('checked', false)
+        // })
+    </script>
+  </body>
+</html>
