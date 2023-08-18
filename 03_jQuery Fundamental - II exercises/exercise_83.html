@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 83 - jQuery fundamentals#2</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+  </head>
+  <style>
+    tr td {
+      padding: 5px;
+    }
+  </style>
+  <body>
+    <h2>Finds all elements that are empty.</h2>
+    <h3>Note: Don't have child elements or text.</h3>
+    <!-- MY FUCKING SOLUTION -->
+    <!-- <form action="">
+      <label for="">Name</label>
+      <input type="text" name="" id="" />
+      <label for="">Age</label>
+      <input type="number" value="34" />
+    </form> 
+
+    <ul id="display"></ul>-->
+
+    <table border="1">
+      <tr>
+        <td></td>
+        <td class="yes">YES!!</td>
+        <td class="yes">YES!!</td>
+        <td></td>
+        <td class="yes">YES!!</td>
+      </tr>
+      <tr>
+        <td class="yes">YES!!</td>
+        <td class="yes">YES!!</td>
+        <td class="yes">YES!!</td>
+        <td class="yes">YES!!</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="yes">YES!!</td>
+        <td class="yes">YES!!</td>
+        <td class="yes">YES!!</td>
+        <td class="yes">YES!!</td>
+        <td class="yes">YES!!</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="yes">YES!!</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td class="yes">YES!!</td>
+        <td class="yes">YES!!</td>
+        <td></td>
+      </tr>
+    </table>
+
+    <button>find</button>
+
+    <script>
+      // w3 solution
+      $("button").on("click", function () {
+        $("td").each(function () {
+          if ($(this).text() === "YES!!") {
+            $(this).css({
+              "background-color": "green",
+              color: "white",
+            })
+          } else if ($(this).is(":empty")) {
+            $(this).text("No :(").css({
+              "background-color": "red",
+              color: "white",
+            })
+          }
+        })
+      })
+
+      // my solution
+      //   $("button").on("click", function () {
+      //     var $emptyEls = []
+
+      //     $(":empty").each(function () {
+      //       $(this).css("border", "3px solid red")
+
+      //       $emptyEls += `<li>${$(this).get(0).nodeName}</li>`
+      //     })
+      //     $("#display").html($emptyEls)
+      //   })
+    </script>
+  </body>
+</html>

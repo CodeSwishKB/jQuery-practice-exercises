@@ -7,6 +7,24 @@
     <script src="/jquery-3.7.0.min.js"></script>
   </head>
   <body>
-    <h2></h2>
+    <h2>Find all elements that are disabled.</h2>
+    <form>
+      First name: <input type="text" name="fname" /><br />
+      Last name: <input type="text" name="lname" disabled /><br />
+    </form>
+    <button>find</button>
+    <script>
+      // w3 solution
+      $("button").on("click", function () {
+        $("input:disabled").val("This input is disabled").css("color", "red")
+      })
+
+      // my solution
+      // $("button").on("click", function () {
+      //   $(":disabled").each(function () {
+      //     $(this).css("border", "2px dotted red")
+      //   })
+      // })
+    </script>
   </body>
 </html>

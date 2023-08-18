@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 80 - jQuery Fundamentals#2</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+    <style>
+      .red {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Iterate over three paragraphs and sets their color property red.</h2>
+    <p>Click here</p>
+    <p>to iterate through</p>
+    <p>these paragraphs.</p>
+
+    <script>
+      // my solution
+      //   $("p").on("click", function () {
+      //     $("p").each(function () {
+      //       $(this).toggleClass("red")
+      //     })
+      //   })
+
+      // w3 solution
+      $(document.body).on("click", function () {
+        $("p").each(function (i) {
+          this.style.color !== "red"
+            ? (this.style.color = "red")
+            : (this.style.color = "")
+        })
+      })
+    </script>
+  </body>
+</html>

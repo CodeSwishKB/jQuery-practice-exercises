@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 85 - jQuery fundamentals#2</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+  </head>
+  <body>
+    <h2>
+      Selects all paragraphs and finds span elements inside these and reverts
+      the selection back to the paragraphs.
+    </h2>
+    <p><span>w3resource</span>.com</p>
+    <button id="button1">Click to see the effect</button>
+
+    <script>
+      $("button").on("click", function () {
+        $("p ").find("span").end().css("border", "2px solid green")
+      })
+    </script>
+  </body>
+</html>
