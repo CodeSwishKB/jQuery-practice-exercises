@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 90 - jQuery fundamentals#2</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+  </head>
+  <body>
+    <h2>Check whether the event namespace is used.</h2>
+    <p></p>
+
+    <button>Display the event.namespace</button>
+
+    <script>
+      $("button").on("click", function () {
+        $("p").on("test.puta", function (e) {
+          $(this).text(e.namespace)
+        })
+        $("p").trigger("test.puta")
+      })
+    </script>
+  </body>
+</html>

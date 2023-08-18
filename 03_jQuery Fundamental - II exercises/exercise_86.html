@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 86 - jQuery fundamentals#2</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+    <style>
+      div {
+        width: 20px;
+        height: 20px;
+        margin: 5px;
+        float: left;
+        border: 2px solid green;
+      }
+      .red {
+        background-color: red;
+      }
+      button {
+        display: block;
+        clear: both;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>
+      Set the background color of the 4th division red by adding an appropriate
+      class.
+    </h2>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <button id="button1">Click to see the effect</button>
+
+    <script>
+      $("button").on("click", function () {
+        $("div").eq(3).addClass("red")
+      })
+    </script>
+  </body>
+</html>

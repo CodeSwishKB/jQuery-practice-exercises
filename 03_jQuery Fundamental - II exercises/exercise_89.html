@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 89 - jQuery fundamentals#2</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+  </head>
+  <body>
+    <h2>Check whether the META key was pressed when the event fired.</h2>
+
+    <p>On Macintosh keyboards, the META key maps to the Command key (⌘).</p>
+    <p>On Windows keyboards, the META key maps to the Windows key.</p>
+    <div id="display"></div>
+    <br />
+    <button value="Test" name="Test" id="checkMetaKey">Click me!</button>
+
+    <script>
+      $("button").on("click", function (e) {
+        var isPress = e.metaKey
+        if (isPress == true) {
+          $("#display").text(`You pressed the meta key so it is ${e.metaKey}`)
+        } else {
+          $("#display").text(
+            `Ahw snap you didn't press the meta key so it is ${e.metaKey}`
+          )
+        }
+      })
+    </script>
+  </body>
+</html>

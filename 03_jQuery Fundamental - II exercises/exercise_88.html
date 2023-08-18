@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 88 - jQuery fundamentals#2</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+  </head>
+  <body>
+    <h2>
+      Finds even table rows, matching the first, third and so on (index 0, 2, 4
+      etc.).
+    </h2>
+
+    <table border="1">
+      <tr>
+        <td>R1C1 Index-0</td>
+        <td>R1C2 Index-0</td>
+      </tr>
+      <tr>
+        <td>R2C1 Index-0</td>
+        <td>R2C2 Index-1</td>
+      </tr>
+      <tr>
+        <td>R3C1 Index-0</td>
+        <td>R3C2 Index-2</td>
+      </tr>
+      <tr>
+        <td>R4C1 Index-0</td>
+        <td>R4C2 Index-3</td>
+      </tr>
+      <tr>
+        <td>R5C1 Index-0</td>
+        <td>R5C2 Index-4</td>
+      </tr>
+    </table>
+    <br />
+    <button id="button1">Click to see the effect</button>
+
+    <script>
+      $("button").on("click", function () {
+        $("tr:even").css({
+          "background-color": "red",
+          color: "white",
+        })
+      })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 91 - jQuery fundamentals#2</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+  </head>
+  <body>
+    <h2>Cancel the default action (navigation) of the click.</h2>
+    <a href="https://www.w3resource.com/"
+      >Clicked anchors will not take the browser to a new URL</a
+    >
+    <p id="log"></p>
+
+    <script>
+      $("a").on("click", function (e) {
+        e.preventDefault()
+        $("<p>").append(`Default ${e.type} prevent`).appendTo("#log")
+      })
+    </script>
+  </body>
+</html>

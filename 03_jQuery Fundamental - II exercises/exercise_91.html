@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 91 - jQuery fundamentals#2</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+  </head>
+  <body>
+    <h2>
+      91. Display the mouse position relative to the left and top edges of the
+      document (within this iframe).
+    </h2>
+    <p></p>
+    <script>
+      $(document).on("mousemove", function (e) {
+        $("p").text(`Page X: ${e.pageX}, Page Y: ${e.pageY}`)
+      })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 93 - jQuery fundamentals#2</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+  </head>
+  <body>
+    <h2>
+      Display previous handler's (the last value returned triggered by this
+      event by an event handler that was.) return value.
+    </h2>
+    <p></p>
+    <button>display</button>
+
+    <script>
+      $("button").on("click", function () {
+        return `bullshit`
+      })
+      $("button").on("click", function (e) {
+        $("p").html(e.result)
+      })
+    </script>
+  </body>
+</html>

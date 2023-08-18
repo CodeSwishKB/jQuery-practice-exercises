@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 94 - jQuery fundamentals#2</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+  </head>
+  <body>
+    <h2>On mouseout of anchors, alert the element type being entered.</h2>
+    <a href="https://www.w3resource.com/">Visit w3resource</a>
+    <p></p>
+    <script>
+      $("a").on("mouseout", function (e) {
+        $("p").html(e.relatedTarget.nodeName).css("color", "red")
+      })
+    </script>
+  </body>
+</html>
