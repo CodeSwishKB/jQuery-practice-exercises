@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 6 - jQuery Core</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+  </head>
+  <body>
+    <h2>
+      Write jQuery code to append a div element (and all of its contents)
+      dynamically to the body element.
+    </h2>
+    <h3>
+      <em>Insert the following within HTML <code>&lt;body&gt;</code> tag :</em>
+      <code style="color: red"
+        >&lt;div&gt;&lt;h1&gt;JQuery Core&lt;/h1&gt;&lt;/div&gt;</code
+      >
+    </h3>
+
+    <p></p>
+    <button>insert</button>
+    <script>
+      $("button").on("click", function () {
+        $("<div><h1>jQuery Core</h1></div>").appendTo("p")
+      })
+    </script>
+  </body>
+</html>
