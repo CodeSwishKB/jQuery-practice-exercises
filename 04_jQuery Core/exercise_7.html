@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 7 - jQuery Core</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+  </head>
+  <body>
+    <h2>Write a jQuery Code to get a single element from a selection.</h2>
+    <ui>
+    <li>Html Tutorial</li>
+    <li>Mongodb Tutorial</li>
+    <li>Python Tutorial</li>
+    <p></p>
+
+    <button>get</button>
+    <script>
+        $('button').on('click', function(){
+            var $li = $("li")
+            var $li_1 = $li.get(1)
+            var html = $li_1.innerHTML
+            $('p').html(html)
+        })
+    </script>
+  </body>
+</html>

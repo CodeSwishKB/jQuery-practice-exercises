@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 9 - jQuery Core</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+  </head>
+  <body>
+    <h2>
+      Write jQuery Code to change the hyperlink and the text of a existing link.
+    </h2>
+    <a href="www.w3resource.com/sqlite/" id="tut" target="_blank"
+      >SQLite Tutorial</a
+    ><br /><br />
+
+    <button>change link</button>
+    <script>
+      $("button").on("click", function () {
+        $("a")
+          .attr("href", "www.w3resource.com/mysql/mysql-tutorials.php")
+          .text(`MySQL Tutorial`)
+      })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 8 - jQuery Core</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+  </head>
+  <body>
+    <h2>
+      Write jQuery Code to add a &lt;b&gt; tag at the beginning of the list
+      item, containing the index of the list item.
+    </h2>
+
+    <ui>
+        <li>Html Tutorial</li>
+        <li>Mongodb Tutorial</li>
+        <li>Python Tutorial</li>
+
+        <p></p>
+    <button>add</button>
+
+    <script>
+        // w3 solution
+        $('button').on('click', function(){
+            $('li').each(function(i, el){
+                $(el).prepend(`<b>${i}:</b> `)
+            })
+        })
+
+        // my solution
+      //  $("button").on("click", function () {
+      //   var text = ""
+      //   $("li").each(function (i, el) {
+      //     text += `<b>${i}:</b> ${$(el).text()}<br>`
+      //   })
+
+      //   $("p").html(text)
+      // })
+    </script>
+  </body>
+</html>
