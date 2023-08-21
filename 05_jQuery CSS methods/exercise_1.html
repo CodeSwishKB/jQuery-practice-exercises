@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 1 - jQuery CSS</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+    <style>
+      div {
+        width: 60px;
+        height: 60px;
+        margin: 5px;
+      }
+
+      p {
+        margin-top: 20px;
+        padding: 5px;
+        border: 2px solid #666;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h2>Get the background color of an element.</h2>
+    <div style="background-color: red"></div>
+    <div style="background-color: rgb(16, 99, 30)"></div>
+    <div style="background-color: #523456"></div>
+    <div style="background-color: #a11"></div>
+    <p></p>
+
+    <script>
+        $('div').on('click', function(){
+            var color = $(this).css('background-color')
+            $('p').html(`That div is <span style="color: ${color}">${color}</span>`)
+        })
+    </script>
+  </body>
+</html>
