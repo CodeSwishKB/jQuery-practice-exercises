@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 3 - jQuery CSS</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+  </head>
+  <body>
+    <h2>Find the widths and heights of various elements.</h2>
+    <p>jQuery Exercises</p>
+    <div
+      style="
+        height: 75px;
+        width: 200px;
+        padding: 10px;
+        margin: 3px;
+        border: 1px solid blue;
+        background-color: #81daf5;
+      "
+    >click me to find</div>
+    <p id="display"></p>
+
+    <script>
+        // w3 solution
+        $('div').on('click', function(){
+          $('#display').html(`The width of the paragraph is: ${+$('p').width()}px; <br> The width of the div is ${+$(this).width()}px`)
+        })
+
+        // my solution
+        // $('div').on('click', function(){
+        //     var $width = $(this).width()
+        //     var $height = $(this).height()
+
+        //     $('#display').html(`Width: ${$width}px;<br> Height: ${$height}px`)
+        // })
+    </script>
+  </body>
+</html>

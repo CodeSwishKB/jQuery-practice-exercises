@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 2 - jQuery CSS</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+    <style>
+      p {
+        margin: 8px;
+        font-size: 16px;
+      }
+      .myclass {
+        color: #fa5858;
+      }
+      .highlight {
+        background: #cef6f5;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>
+      Add the following class "myclass" to the matched paragraph elements.
+    </h2>
+    <p>jQuery Exercises</p>
+    <p>and Solution.</p>
+
+    <button>add class</button>
+    <script>
+        $('button').on('click', function(){
+            $('p').first().addClass(' highlight')
+            $('p').last().addClass('myclass')
+        })
+    </script>
+  </body>
+</html>

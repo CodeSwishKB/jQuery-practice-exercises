@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 4 - jQuery CSS</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+    <style>
+      p {
+        margin-top: 20px;
+        margin-left: 10px;
+        padding: 5px;
+        border: 2px solid #666;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Get the scroll top and left of an element.</h2>
+    <p></p> 
+    <button>get</button>
+
+    <script>
+        $('button').on('click', function(){
+            var $p =$('p')
+            var $scrollTop = $p.scrollTop()
+            var $scrollLeft = $p.scrollLeft()
+            $('p').html(`The scrollTop is ${$scrollTop}px and the scrollLeft is ${$scrollLeft}px`)
+        })
+    </script>
+  </body>
+</html>
