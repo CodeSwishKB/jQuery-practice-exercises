@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 14 - jQuery Events</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+  </head>
+  <style>
+    div {
+      height: 200px;
+      width: 400px;
+      margin: 10px;
+      background-color: aquamarine;
+      overflow: auto;
+      padding: 5px;
+    }
+  </style>
+  <body>
+    <h2>
+      Count the number of milliseconds between the two click events on a
+      paragraph
+    </h2>
+    <p>
+      Count the number of milliseconds between the two click events on a
+      paragraph
+    </p>
+    <div>Click on the above paragraph</div>
+    <br />
+
+    <script>
+      var lastTime, timeDiff;
+      $("div").on("click", function (e) {
+        if (lastTime) {
+          timeDiff = e.timeStamp - lastTime;
+          $("div").append(
+            `time since the last event: ${parseInt(timeDiff)}<br>`
+          );
+        } else {
+          $("div").append("<br>click again.<br>");
+        }
+        lastTime = e.timeStamp;
+      });
+    </script>
+  </body>
+</html>

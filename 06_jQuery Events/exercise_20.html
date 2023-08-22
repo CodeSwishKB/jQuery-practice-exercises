@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 20 - jQuery Events</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+    <style>
+      .focusedin {
+        background: green;
+      }
+      .focusedout {
+        background: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>
+      Set background color of an element when the element (or any elements
+      inside it) gets focus or loses focus.
+    </h2>
+    <div>
+      First name: <input type="text" /><br />
+      Last name: <input type="text" />
+    </div>
+    <script>
+      $("div")
+        .on("focusin", function () {
+          $(this).attr("class", "focusedin");
+        })
+        .on("focusout", function () {
+          $(this).attr("class", "focusedout");
+        });
+    </script>
+  </body>
+</html>

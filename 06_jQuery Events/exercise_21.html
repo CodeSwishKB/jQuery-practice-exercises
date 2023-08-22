@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 21 - jQuery Events</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+  </head>
+  <body>
+    <h2>Display the tag name of the clicked element.</h2>
+    <p></p>
+    <h2>This is a heading 2</h2>
+    <div>
+      First name: <input type="text" /><br />
+      Last name: <input type="text" />
+    </div>
+
+    <script>
+      $("body").on("click", function (e) {
+        $("p").html(`Clicked on - ${e.target.tagName}`);
+      });
+    </script>
+  </body>
+</html>

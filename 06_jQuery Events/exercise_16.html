@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 16 - jQuery Events</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+  </head>
+  <body>
+    <h2>Display the keyboard key which was pressed in a textbox:.</h2>
+    Input your name: <input type="text" />
+    <div></div>
+
+    <script>
+      $("input").on("keydown", function (e) {
+        $("div").text(`${e.type}: ${e.which}`);
+      });
+    </script>
+  </body>
+</html>

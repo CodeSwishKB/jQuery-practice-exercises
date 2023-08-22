@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 19 - jQuery Events</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+    <style>
+      .focused {
+        background: green;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Test if an input has focus?</h2>
+    <div id="content">
+      <input tabindex="1" />
+      <select tabindex="3">
+        <option>select menu</option>
+      </select>
+      <p tabindex="3">A Paragraph</p>
+    </div>
+
+    <script>
+      $("#content").on("focus blur", "*", function (e) {
+        var el = $(this);
+        setTimeout(function () {
+          el.toggleClass("focused", el.is(":focus"));
+        }, 0);
+      });
+    </script>
+  </body>
+</html>

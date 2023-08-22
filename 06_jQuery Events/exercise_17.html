@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 17 - jQuery Events</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+  </head>
+  <style>
+    span {
+      display: none;
+    }
+  </style>
+  <body>
+    <h2>
+      Attach a function to the focus event. The focus event occurs (display a
+      message regarding the text field) when the &lt;input&gt; field gets focus.
+    </h2>
+
+    <p><input type="text" /> <span>Input your first name</span></p>
+    <p><input type="text" /> <span>Input your last name</span></p>
+
+    <script>
+      $("input").on("focus", function () {
+        $(this).next("span").css("display", "inline").fadeOut(3000);
+      });
+    </script>
+  </body>
+</html>
