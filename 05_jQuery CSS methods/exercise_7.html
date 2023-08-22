@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 7 - jQuery CSS</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+    <style>
+      div {
+        width: 300px;
+        height: 250px;
+        background-color: gainsboro;
+        margin: 8px;
+      }
+
+      p {
+        margin: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Find the outerHeight and outerWidth of an element.</h2>
+    <div></div>
+    <p></p>
+    <button>find it</button>
+
+    <script>
+        $('button').on('click', function(){
+            $('p').text(`outerHeight: ${+$('div').outerHeight()}px :: outerWidth: ${+$('div').outerWidth()}px`)
+        })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 8 - jQuery CSS</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+    <style>
+      .divclass {
+        width: 90px;
+        height: 75px;
+        margin: 5px;
+        background-color: #f3e2a9;
+      }
+
+      .red {
+        color: red;
+        font-weight: bolder;
+        font-size: 20px;
+      }
+
+      .green {
+        color: green;
+        font-weight: bolder;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Find an element that contains a specified class.</h2>
+    <div id="div1" class="divclass"></div>
+    <div id="div2"></div>
+    <div id="div3"></div>
+    <p></p>
+    <button>find it</button>
+
+    <script>
+      // my solution
+      $("button").on("click", function () {
+        $("p").html(
+          `is div1 has class?: <span class="${
+            $("#div1").hasClass("divclass") ? "green" : "red"
+          }">${$("#div1").hasClass(
+            "divclass"
+          )}</span><br> is div2 has class?: <span class="${
+            $("#div2").hasClass("divclass") ? "green" : "red"
+          }">${$("#div2").hasClass(
+            "divclass"
+          )}</span><br> is div3 has class?: <span class="${
+            $("#div3").hasClass("divclass") ? "green" : "red"
+          }">${$("#div3").hasClass("divclass")}</span>`
+        );
+      });
+
+      //w3 solution
+      // $("button").on("click", function () {
+      //   $("p").html(
+      //     `${$("#div1").hasClass("divclass").toString()}<br>${$("#div2")
+      //       .hasClass("divclass")
+      //       .toString()}<br>${$("#div3").hasClass("divclass").toString()}`
+      //   );
+      // });
+    </script>
+  </body>
+</html>

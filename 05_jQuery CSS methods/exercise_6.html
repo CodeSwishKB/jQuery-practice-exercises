@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 6 jQuery CSS</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+    <style>
+      div {
+        height: 150px;
+        width: 200px;
+        background-color: aqua;
+        margin: 10px;
+      }
+
+      p {
+        margin-top: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Find the innerHeight and innerWidth of an element.</h2>
+    <div></div>
+    <p></p>
+    <button>find it</button>
+
+    <script>
+        // w3 solution
+        $("button").on('click', function(){
+            $('p').text(`innerHeight: ${+$('div').innerHeight()}px :: innerWidth: ${+$('div').innerWidth()}px`)
+        })
+
+        // my solution
+    //   $("button").on("click", function () {
+    //     var $p = $("p");
+    //     var $div = $("div");
+    //     $("div").html(
+    //       `The innerWidth of the <b>div</b> is ${$div.innerWidth()} and the innerHeight is ${$div.innerHeight()}`
+    //     ).css({
+    //         'font-size': '14px',
+    //         overflow: 'auto'
+    //     });
+
+    //     $("p").html(
+    //       `The innerWidth of the <b>p</b> are ${$p.innerWidth()} and the innerHeight is ${$p.innerHeight()}`
+    //     ).css({
+    //         'font-size': '16px',
+    //         overflow: 'auto'
+    //     });
+    //   });
+    </script>
+  </body>
+</html>

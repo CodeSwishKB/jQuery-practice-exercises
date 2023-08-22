@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exerise 10 - jQuery CSS</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+    <style>
+      p {
+        margin-top: 20px;
+        margin-left: 10px;
+        padding: 5px;
+        border: 2px solid #666;
+      }
+      .yellow {
+        background-color: yellowgreen;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Toggle a specified class when an element is clicked.</h2>
+    <p>Click on the Paragraphs</p>
+    <p>jQuery Exercises</p>
+    <p>JavaScript Exercises</p>
+
+    <script>
+      $("p").on("click", function () {
+        $(this).toggleClass("yellow");
+      });
+    </script>
+  </body>
+</html>
