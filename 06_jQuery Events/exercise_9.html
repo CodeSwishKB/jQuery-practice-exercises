@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 9 - jQuery Events</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+  </head>
+  <body>
+    <h2>
+      Find the position of the mouse pointer relative to the left and top edges
+      of the document
+    </h2>
+    <p></p>
+    <script>
+      $(document).on("mousemove", function (e) {
+        $("p").text(`Mouse Position: ${e.pageX}, ${e.pageY}`);
+      });
+    </script>
+  </body>
+</html>

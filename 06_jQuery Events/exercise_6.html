@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 6 - jQuery Events</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+  </head>
+  <body>
+    <h2>Click a header to add another</h2>
+    <h1>Click me to add another!</h1>
+
+    <script>
+      // w3 solution
+      $("body").delegate("h1", "click", function () {
+        $(this).after("<h1>Another header!</h1>");
+      });
+
+      // my solution
+      //   $("h1").on("click", function () {
+      //     $(this).append("<br>click me again!");
+      //   });
+    </script>
+  </body>
+</html>

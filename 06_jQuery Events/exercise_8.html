@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 8 - jQuery Events</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+  </head>
+  <body>
+    <h2>
+      Change the background color of the &lt;div&gt; element of the following
+      code on clicking the button.
+    </h2>
+
+    <div style="background-color: yellow">
+      <p>Click the button to change the background color of this paragraph.</p>
+      <button>Click me!</button>
+    </div>
+
+    <script>
+      // w3 solution
+      $("div").on("click", "button", function (e) {
+        $(e.delegateTarget).css("background-color", "red");
+      });
+
+      // my solution
+      //   $("button").on("click", function () {
+      //     $("div").css("background-color", "red");
+      //   });
+    </script>
+  </body>
+</html>

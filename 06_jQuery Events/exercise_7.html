@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 7 - jQuery Events</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+  </head>
+  <body>
+    <h2>
+      Write a jQuery Code to Find the data passed with the on() method for each
+      &lt;p&gt; element.
+    </h2>
+
+    <h3>This is a header1</h3>
+    <h3>This is another header2</h3>
+    <h3>This is another header3</h3>
+
+    <script>
+      $("h3").each(function (i) {
+        $(this).on("click", { x: i }, function (e) {
+          var info = `Header ${$(this).index()} paragraph Event data: ${
+            e.data.x
+          }`;
+          $(`<p>${info}</p>`).appendTo("body");
+        });
+      });
+    </script>
+  </body>
+</html>

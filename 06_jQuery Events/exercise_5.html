@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 5 - jQuery Events</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+    <style>
+      p {
+        background: blue;
+        color: white;
+      }
+      p.dbl {
+        background: yellow;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Double click on paragraph to toggle background color</h2>
+    <p>Double-click here to change the background color.</p>
+
+    <script>
+      $("p").on("dblclick", function () {
+        $(this).toggleClass("dbl");
+      });
+    </script>
+  </body>
+</html>

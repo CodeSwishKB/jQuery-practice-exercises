@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 10 - jQuery Events</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+  </head>
+  <body>
+    <h2>Stop people from writing in first text input box (user ID).</h2>
+    <p>User ID : <input type="text" id="field1" /></p>
+    <p>Password : <input type="password" id="field2" /></p>
+
+    <button>stop</button>
+    <script>
+      $("button").on("click", function () {
+        $("input[type=text]").focus(function () {
+          $(this).blur();
+        });
+      });
+    </script>
+  </body>
+</html>

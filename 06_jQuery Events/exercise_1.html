@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 1 - jQuery Events</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+  </head>
+  <body>
+    <h2>Attach a click and double-click event to the &lt;p&gt; element.</h2>
+    <p>Click me!</p>
+
+    <script>
+      $("p")
+        .on("click", function (e) {
+          e.preventDefault();
+          $(this).append(`<p>This is a click Event</p>`);
+        })
+        .on("dblclick", function (e) {
+          e.preventDefault();
+          $(this).append(`<p>This is a double-click Event</p>`);
+        });
+    </script>
+  </body>
+</html>

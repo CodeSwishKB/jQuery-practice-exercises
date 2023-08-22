@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 2 - jQuery Events</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+  </head>
+  <body>
+    <h2>
+      Attach a function to the blur event. The blur event occurs when the
+      following &lt;input&gt; Field1 loses focus
+    </h2>
+
+    <form>
+      <input id="field1" type="text" value="Field 1" />
+      <input id="field2" type="text" value="Field 2" />
+    </form>
+
+    <script>
+      $("input").on("blur", function () {
+        $("#field1").val("The Field 1 loses focus");
+      });
+    </script>
+  </body>
+</html>

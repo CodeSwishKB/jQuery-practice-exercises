@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 12 - jQuery Events</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+  </head>
+  <body>
+    <h2>Return previous values of custom events.</h2>
+    <button>Display event.result</button>
+    <p></p>
+
+    <script>
+      $("button").on("click", function () {
+        return "hello world";
+      });
+      $("button").on("click", function (e) {
+        $("p").html(e.result);
+      });
+    </script>
+  </body>
+</html>
