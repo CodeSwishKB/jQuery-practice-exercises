@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 24 - jQuery Events</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+  </head>
+  <body>
+    <h2>Display the window width while (or after) it is resized.</h2>
+    <p>Press mouse and release here.</p>
+
+    <script>
+      $("p").on("click", function () {
+        $(window).on("resize", function () {
+          $("p").prepend(`<p>${$(window).width()}</p>`);
+        });
+      });
+    </script>
+  </body>
+</html>

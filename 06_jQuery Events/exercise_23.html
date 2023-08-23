@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 23 - jQuery Events</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+  </head>
+  <body>
+    <h2>Show texts when mouseup and mousedown event triggering.</h2>
+
+    <p>press mouse up and down</p>
+
+    <script>
+      $("p")
+        .on("mouseup", function () {
+          $(this).append("<br>mouseup!");
+        })
+        .on("mousedown", function () {
+          $(this).append("<br>mousedown!");
+        });
+    </script>
+  </body>
+</html>
