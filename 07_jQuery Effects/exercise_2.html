@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 2 - jQuery Events</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+  </head>
+  <body>
+    <h2>Stop an animation</h2>
+    <button id="btn1">Start Animate</button>
+    <button id="btn2">Stop Animate</button>
+    <div
+      id="box"
+      style="background: #5858fa; height: 100px; width: 100px; margin: 6px"
+    ></div>
+
+    <script>
+      $("#btn1").on("click", function () {
+        $("div").animate({ height: "500px" }, 1000);
+        $("div").animate({ width: "500px" }, 1000);
+        $("div").animate({ height: "250px" }, 1000);
+        $("div").animate({ width: "250px" }, 1000);
+      });
+
+      $("#btn2").on("click", function () {
+        var $div = $("div");
+        $div.clearQueue();
+        $div.stop();
+      });
+    </script>
+  </body>
+</html>

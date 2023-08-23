@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 4 - jQuery Effects</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+    <style>
+      .box {
+        height: 150px;
+        width: 150px;
+        background-color: yellow;
+        position: absolute;
+        top: 100px;
+        left: 10px;
+      }
+
+      .red {
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>
+      Use dequeue to end a custom queue function which allows the queue to keep
+      going.
+    </h2>
+    <button>start</button><br /><br />
+    <div class="box"></div>
+
+    <script>
+      // my solution
+      //   $("button").on("click", function () {
+      //     $("div")
+      //       .animate({ left: "+=500px" }, 2000)
+      //       .queue(function () {
+      //         $(this).toggleClass("red").dequeue();
+      //       })
+      //       .animate({ left: "10px", top: "100px" }, 1000);
+      //   });
+
+      // w3 solution
+      $("button").on("click", function () {
+        $("div")
+          .animate({ left: "+=500px" }, 2000)
+          .queue(function () {
+            $(this).toggleClass("red").dequeue();
+          })
+          .animate({ left: "-=500px" }, 2000);
+      });
+    </script>
+  </body>
+</html>

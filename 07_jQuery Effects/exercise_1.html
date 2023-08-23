@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 1 - jQuery Effects</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+  </head>
+  <body>
+    <h2>Animate an element, by changing its height and width.</h2>
+    <button id="btn1">Animate height & width</button>
+    <button id="btn2">Reset</button>
+    <div
+      id="box"
+      style="background: #98bf21; height: 100px; width: 100px; margin: 6px"
+    ></div>
+
+    <script>
+      $("#btn1").on("click", function () {
+        $("div").animate(
+          {
+            width: "500px",
+            height: "500px",
+          },
+          1700
+        );
+      });
+      $("#btn2").on("click", function () {
+        $("div").animate(
+          {
+            width: "100px",
+            height: "100px",
+          },
+          1700
+        );
+      });
+    </script>
+  </body>
+</html>
