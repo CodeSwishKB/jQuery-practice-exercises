@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 13 - jQuery Effects</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+  </head>
+  <body>
+    <h2>Animates all hidden elements to show slowly.</h2>
+    <button>Show it</button>
+    <p style="display: none; background-color: yellow">Hello</p>
+
+    <script>
+      $("button").on("click", function () {
+        $("p").show("slow");
+      });
+    </script>
+  </body>
+</html>

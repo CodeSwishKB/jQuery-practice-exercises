@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 10 - jQuery Effects</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+    <style>
+      p {
+        background: #eef4ed;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>
+      Animates all shown paragraphs to hide slowly (complete the animation
+      within specified time).
+    </h2>
+    <button>Click to hide the following paragraphs</button>
+    <p>jQuery</p>
+    <p>jQuery Exercises</p>
+    <script>
+      $("button").on("click", function () {
+        $("p").hide(3000);
+      });
+    </script>
+  </body>
+</html>

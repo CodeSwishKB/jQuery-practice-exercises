@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 5 - jQuery Effects</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+  </head>
+  <body>
+    <h2>Fade in and fade out all division elements</h2>
+    <div style="background: #2e9afe; width: 100%">
+      My Effect is fadeOut Effect
+    </div>
+    <button id="btn2">Fade In (3 Second)</button>
+    <button id="btn1">Fade Out (3 Second)</button>
+
+    <script>
+      $("#btn2").on("click", function () {
+        $("div").fadeIn(3000);
+      });
+      $("#btn1").on("click", function () {
+        $("div").fadeOut(3000);
+      });
+    </script>
+  </body>
+</html>

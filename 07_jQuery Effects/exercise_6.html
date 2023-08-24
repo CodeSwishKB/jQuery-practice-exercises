@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 6 - jQuery Effects</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+  </head>
+  <body>
+    <h2>
+      Animates a paragraph to fade to an specified opacity (complete the
+      animation within 500 milliseconds).
+    </h2>
+    <p>Click this paragraph to see it fade.</p>
+
+    <script>
+      $("p").on("click", function () {
+        $(this).fadeTo("slow", 0.4);
+      });
+    </script>
+  </body>
+</html>

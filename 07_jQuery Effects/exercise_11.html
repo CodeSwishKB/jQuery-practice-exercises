@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 11 - jQuery Effects</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+    <style>
+      div {
+        height: 200px;
+        width: 200px;
+        background-color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Run an animation with less frames.</h2>
+    <p><input type="button" value="Run" /></p>
+    <div></div>
+
+    <script>
+      jQuery.fx.interval = 200;
+      $("input").on("click", function () {
+        $("div").toggle(3000);
+      });
+    </script>
+  </body>
+</html>

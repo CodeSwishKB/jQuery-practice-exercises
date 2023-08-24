@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 7 - jQuery Effects</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+  </head>
+  <body>
+    <h2>Write a jQuery Code to get a single element from a selection.</h2>
+    <p>Click this paragraph to see it fade.</p>
+
+    <script>
+      $("p").on("click", function () {
+        $(this).fadeTo(1000, 0.33);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise 8 - jQuery Effects</title>
+    <script src="/jquery-3.7.0.min.js"></script>
+  </head>
+  <body>
+    <h2>Toggle between fading in and fading out different boxes.</h2>
+    <p>fadeToggle() with different speed parameters.</p>
+    <button>Click to fade in/out boxes</button><br /><br />
+    <div
+      id="div1"
+      style="width: 100px; height: 100px; background-color: #6d5050"
+    ></div>
+    <br />
+    <div
+      id="div2"
+      style="width: 100px; height: 100px; background-color: #42d5a9"
+    ></div>
+    <br />
+    <div
+      id="div3"
+      style="width: 100px; height: 100px; background-color: #8942d5"
+    ></div>
+    <script>
+      $("button").on("click", function () {
+        $("#div1").fadeToggle();
+        $("#div2").fadeToggle("slow");
+        $("#div3").fadeToggle(4000);
+      });
+    </script>
+  </body>
+</html>
